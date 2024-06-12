@@ -1,4 +1,12 @@
 @extends('fontend.layout.layout')
+@section('css')
+    <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet">
+    <style type="text/css"> 
+        div#slideshow-banner { height:450px; width:600px; overflow:hidden; position:relative; margin:30px auto; }
+        div#slideshow-banner ul { width:100%; height:100%; }
+        ul li {list-style-type:none;}
+    </style>
+@endsection
 @section('mainContent')
 <!-- Banner Section One -->
 <section class="fluid-one">
@@ -17,19 +25,15 @@
         <!-- Carousel Column -->
         <div class="fluid-one_carousel-column">
             <div class="fluid-one_carousel-inner">
-                <div class="single-item-carousel owl-carousel owl-theme">
-                    <!-- Slide -->
-                    <div class="slide">
-                        <figure class="fluid-one_image"><img src="{{asset('assets/images/resource/fluid-1.jpg')}}" alt=""></figure>
-                    </div>
-                    <!-- Slide -->
-                    <div class="slide">
-                        <figure class="fluid-one_image"><img src="{{asset('assets/images/resource/fluid-2.jpg')}}" alt=""></figure>
-                    </div>
-                    <!-- Slide -->
-                    <div class="slide">
-                        <figure class="fluid-one_image"><img src="{{asset('assets/images/resource/fluid-3.jpg')}}" alt=""></figure>
-                    </div>
+                <div id="slideshow-banner">
+                    <ul>
+                        @for($i=1; $i<4; $i++)
+                        {
+                            <li class="slideshow-item">
+                                <figure class="fluid-one_image"><img src="{{asset("assets/images/resource/fluid-$i.jpg")}}" alt=""></figure>
+                            </li>
+                        }    
+                    </ul>    
                 </div>
             </div>
         </div>
@@ -300,4 +304,8 @@
        </div>
     </div>
 </div> --}}
+@endsection
+@section('javaScricp')
+    <script src="{{ asset('assets/js/jquery.slide.js') }}"></script> 
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>    
 @endsection
