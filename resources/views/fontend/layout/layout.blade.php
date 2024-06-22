@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>IT-Firm IT Businees HTML-5 Template | Homepage 03</title>
+<title>AscentaVerse</title>
 <!-- Stylesheets -->
 <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
@@ -30,7 +30,9 @@
     <!-- Preloader -->
     <div class="preloader"></div>
 	<!-- End Preloader -->
-
+    <marquee direction="left" height="35px" width="100%" class="scroolbar" bgcolor="#23a592">
+        <p class="text-white" style="font-family: var(--font-family-FiraSans);line-height: 32px;"><?= "Coming soon! Our website is under construction and will be live shortly. We apologize for any inconvenience. Stay tuned for updates!"  ?></h4>
+    </marquee>
  	<!-- Main Header / Header Style Three -->
     <header class="main-header header-style-three">
 
@@ -39,7 +41,9 @@
             <div class="auto-container">
 				<div class="inner-container d-flex justify-content-between align-items-center flex-wrap">
 					<!-- Logo Box -->
-					<div class="logo"><a href="{{ route('home') }}"><img src="{{asset('assets/images/logo-2.png')}}" alt="" title=""></a></div>
+					<div class="logo"><a href="{{ route('home') }}">
+                        <img src="{{asset('assets/images/logo-2.png')}}" alt="" title="">
+                    </a></div>
 
 
 					<div class="nav-outer d-flex justify-content-between align-items-center flex-wrap">
@@ -179,23 +183,12 @@
 								<div class="footer-widget newsletter-widget">
 									<h4>Newsletter</h4>
 									<div class="text">Subscribe our newsletter to get our latest update & news</div>
-
-									<!-- Email Box -->
-									<div class="email-box">
-										<form method="post" action="https://html.themexriver.com/it-firm/contact.html">
-											<div class="form-group">
-												<input type="email" name="search-field" value="" placeholder="Your mail address" required>
-												<button type="submit"><span class="icon fa-solid fa-paper-plane fa-fw"></span></button>
-											</div>
-										</form>
-									</div>
-
 									<!-- Social Box -->
 									<ul class="social-box">
-										<li><a href="https://www.twitter.com/" class="fa-brands fa-facebook-f fa-fw"></a></li>
-										<li><a href="https://www.facebook.com/" class="fa-brands fa-twitter fa-fw"></a></li>
-										<li><a href="https://dribbble.com/" class="fa-solid fa-dribbble fa-fw"></a></li>
-										<li><a href="https://behance.com/" class="fa-solid fa-behance fa-fw"></a></li>
+										<li><a href="https://www.facebook.com/ascentaverse" class="fa-brands fa-facebook-f fa-fw"></a></li>
+										<li><a href="https://x.com/ascentaverse" class="fa-brands fa-twitter fa-fw"></a></li>
+										<li><a href="https://www.instagram.com/AscentaVerse/" class="fa-brands fa-instagram fa-fw"></a></li>
+										<li><a href="https://www.youtube.com/@ascentaverse" class="fa-brands fa-youtube fa-fw"></a></li>
 									</ul>
 									<!-- End Social Box -->
 
@@ -214,12 +207,13 @@
 								<div class="footer-widget contact-widget">
 									<h4>Official info:</h4>
 									<ul class="contact-list">
-										<li><span class="icon fa fa-phone"></span> 30 Commercial Road <br> Fratton, Australia</li>
-										<li><span class="icon fa fa-envelope"></span> 1-888-452-1505</li>
+										<li><span class="icon fa fa-home"></span>2020 Islampur, Jamalpur,</br>Mymensingh, Bangladesh</li>
+										<li><span class="icon fa fa-phone"></span> +8809613245856</li>
+										<li><span class="icon fa fa-envelope"></span>info@ascentaverse.com</li>
 									</ul>
 									<div class="timing">
 										<strong>Open Hours: </strong>
-										Mon - Sat: 8 am - 5 pm, <br> Sunday: CLOSED
+										Sun - Wed : 9 am - 9 pm, <br>Thursday : 9 am - 6 pm, <br> Fri - Sat : CLOSED
 									</div>
 								</div>
 							</div>
@@ -227,7 +221,7 @@
 							<!-- Footer Column -->
 							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
 								<div class="footer-widget instagram-widget">
-									<h4>Gallery</h4>
+									<h4>Open Hours:</h4>
 									<div class="widget-content">
 										<div class="images-outer clearfix">
 											<!--Image Box-->
@@ -254,7 +248,7 @@
 			</div>
 
 			<div class="footer-bottom">
-				<div class="copyright">{{date('Y')}} &copy; All rights reserved by <a href="#">Themexriver</a></div>
+				<div class="copyright">{{date('Y')}} &copy; All rights reserved by <a href="/">AscentaVerse</a></div>
 			</div>
 
 		</div>
