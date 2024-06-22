@@ -64,7 +64,6 @@
 									<li><a href="{{ route('about') }}">About Us</a></li>
 									<li><a href="{{ route('services') }}">Services</a></li>
 									<li><a href="{{ route('blog') }}">Blog</a></li>
-									<li><a href="{{ route('kyc') }}">Kyc</a></li>
 									<li>
                                         <a class="d-block d-sm-none" href="{{ route('login') }}">Login</a>
                                     </li>
@@ -274,6 +273,6 @@
 <script src="{{ asset('assets/js/tilt.jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
 <script src="{{ asset('assets/js/script.js') }}"></script>
-@yield('javaScricp')
+@yield('javaScricpt')
 </body>
 </html>
