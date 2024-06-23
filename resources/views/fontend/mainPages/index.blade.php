@@ -1,6 +1,55 @@
 @extends('fontend.layout.layout')
 @section('css')
     <link rel="stylesheet" href="{{asset('assets/css/slide-show.css')}}">
+    <style>
+      :root {
+        --main-color: #3630ff;
+        --accent-color: #9000ff;
+        --highlight-color: #08d9ff;
+      }
+      .team-member {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+      .team-member img {
+        width: 100%;
+        height: auto;
+      }
+      .team-info {
+        text-align: center;
+        padding: 20px;
+      }
+      .team-info h4 {
+        margin: 10px 0;
+        color: var(--main-color);
+      }
+      .team-info .position {
+        color: var(--accent-color);
+      }
+      .team-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(54, 48, 255, 0.8);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .team-hover .social-links a {
+        margin: 0 5px;
+        color: #fff;
+      }
+      .team-member:hover .team-hover {
+        opacity: 1;
+      }
+    </style>
 @endsection
 @section('mainContent')
     <!-- Banner Section One -->
@@ -15,42 +64,44 @@
                         <h2 class="sec-title_heading">Our <span class="theme_color">penetration</span> testing <br> team uses an industry</h2>
                         <div class="sec-title_text">We provide the full spectrum of IT services and consulting for various industries.</div>
                     </div>
-                </div>
-            </div>
-            <!-- Carousel Column -->
-            {{-- <div class="fluid-one_carousel-column">
-                <div class="fluid-one_carousel-inner">
-                    <div class="single-item-carousel owl-carousel owl-theme">
-                        <!-- Slide -->
-                        <div class="slide">
-                            <figure class="fluid-one_image"><img src="{{asset('assets/images/resource/fluid-1.jpg')}}" alt=""></figure>
+                    <div class="d-flex">
+                        <div class="button-box ">
+                            <a class="btn-style-five theme-btn btn-item" href="{{route('about')}}">
+                                <div class="btn-wrap">
+                                    <span class="text-one">About Us<i class="fa-solid fa-plus"></i></span>
+                                    <span class="text-two">About Us<i class="fa-solid fa-plus"></i></span>
+                                </div>
+                            </a>
                         </div>
-                        <!-- Slide -->
-                        <div class="slide">
-                            <figure class="fluid-one_image"><img src="{{asset('assets/images/resource/fluid-2.jpg')}}" alt=""></figure>
-                        </div>
-                        <!-- Slide -->
-                        <div class="slide">
-                            <figure class="fluid-one_image"><img src="{{asset('assets/images/resource/fluid-3.jpg')}}" alt=""></figure>
+                        <div class="button-box" style="margin-left: 15px;">
+                            <a class="btn-style-two theme-btn btn-item" href="{{route('services')}}">
+                                <div class="btn-wrap">
+                                    <span class="text-one">Our Services<i class="fa-solid fa-plus"></i></span>
+                                    <span class="text-two">Our Services<i class="fa-solid fa-plus"></i></span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </> --}}
-            <!-- Images from Unsplash -->
+            </div>
 
             <div class="fluid-one_carousel-column">
-                <div class="slider-container">
-                    <div class="slide" style="background-image: url('{{asset('assets/images/resource/fluid-1.jpg')}}')"></div>
+                <div style="position: relative;padding: 10px 10px 40px;">
+                    <div style="padding:7px; box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px; background:#fff; border-radius: 10px;">
+                        <div class="slider-container">
+                            <div class="slide" style="background-image: url('{{asset('assets/images/resource/fluid-1.jpg')}}')"></div>
 
-                    <div class="slide" style="background-image: url('{{asset('assets/images/resource/fluid-2.jpg')}}')"></div>
+                            <div class="slide" style="background-image: url('{{asset('assets/images/resource/fluid-2.jpg')}}')"></div>
 
-                    <div class="slide" style="background-image: url('{{asset('assets/images/resource/fluid-3.jpg')}}')"></div>
+                            <div class="slide" style="background-image: url('{{asset('assets/images/resource/fluid-3.jpg')}}')"></div>
 
-                   {{--  <div class="controls-container">
-                        <div class="control"></div>
-                        <div class="control"></div>
-                        <div class="control"></div>
-                    </div> --}}
+                        {{--  <div class="controls-container">
+                                <div class="control"></div>
+                                <div class="control"></div>
+                                <div class="control"></div>
+                            </div> --}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,7 +232,9 @@
                     <div class="team_one col-lg-3 col-md-6 col-sm-12">
                         <div class="team_one-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="team_one-image">
-                                <img src="{{asset("assets/images/resource/team-$i.jpg")}}" alt="" />
+                                <div class="bg-white rounded shadow-sm py-5 px-4" style="margin-bottom: 5rem;">
+                                    <img style="width: 200px; height:200px;" src="{{asset("assets/images/resource/team-$i.jpg")}}" alt="" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                                </div>
                                 <div class="team_one-content">
                                     <h5 class="team-one_title"><a href="team-detail.html">Ashish Sudra</a></h5>
                                     <div class="team-one_designation">Founder & CEO</div>
@@ -203,6 +256,46 @@
                             </ul>
                         </div>
                     </div>
+                @endfor
+            </div>
+        </div>
+    </section>
+    <!-- End Team One -->
+    <!-- Team One -->
+    <section class="team-one">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title centered">
+                <div class="sec-title_title">Team Member2</div>
+                <h2 class="sec-title_heading">Passionate Personalities, <br> <span class="theme_color">Versatile</span> Brains</h2>
+            </div>
+            <div class="row clearfix">
+                @for ($i=1; $i<5; $i++)
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="team-member">
+                        <div class="bg-white rounded shadow-sm py-5 px-4" style="margin-bottom: 5rem;">
+                            <img style="width: 200px; height:200px;" src="{{asset("assets/images/resource/team-$i.jpg")}}" alt="" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+                        </div>
+                      <div class="team-info">
+                        <h4>Veronica Johnson</h4>
+                        <div class="position">Web Developer</div>
+                      </div>
+                      <div class="team-hover">
+                          <div  >
+                            {{-- style="background: url('{{asset("assets/images/resource/team-$i.jpg")}}');background-repeat: no-repeat;
+  background-size: auto; " --}}
+
+                            <p>Lead the team of passionate developers, designers and the strategists with a thought.</p>
+                            <div class="social-links">
+                                <a href="#" target="_blank"><i class="fa-brands fa-facebook-f fa-fw"></i></a>
+                                <a href="#" target="_blank"><i class="fa-brands fa-twitter fa-fw"></i></a>
+                                <a href="#" target="_blank"><i class="fa-brands fa fa-dribbble fa-fw"></i></a>
+                            </div>
+                            <a class="btn btn-primary mt-2" href="#">Read More</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 @endfor
             </div>
         </div>
@@ -249,7 +342,6 @@
                                             <a class="team_one-more" href="team-detail.html">Read more</a>
                                         </div>
                                     </div>
-
                                 </div>
                                 <!-- Social Box -->
                                 <ul class="team-one_social">

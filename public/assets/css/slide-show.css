@@ -4,8 +4,9 @@
     justify-content: center;
     overflow: hidden;
     position: relative;
-    height: 80vh;
-    width: 674.5px;
+    height: 85vh;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .slider-container::after {
