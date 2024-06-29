@@ -6,6 +6,7 @@
 <!-- Stylesheets -->
 <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('assets/css/slide-show.css')}}">
 <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet">
 @yield('css')
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
