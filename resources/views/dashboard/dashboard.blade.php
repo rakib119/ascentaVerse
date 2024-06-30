@@ -44,7 +44,7 @@
                                                 </span>
                                             </div>
                                             <h5 class="font-size-22">{{--$users->count()--}}</h5>
-                                            <a href="{{route('bannerPublish')}}" class="btn btn-primary">Publish Banner</a>
+
                                         </div>
                                     </div>
                                 </div>

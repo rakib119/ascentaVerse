@@ -12,7 +12,7 @@ class BackendController extends Controller
     }
     public function dashboard()
     {
-        return
+        return view('dashboard.dashboard');
     }
 
 }

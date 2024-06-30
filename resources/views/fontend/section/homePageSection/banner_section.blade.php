@@ -6,7 +6,7 @@
                 <!-- Sec Title -->
                 <div class="sec-title">
                     <div class="sec-title_title">Who We Are?</div>
-                    <h2 class="sec-title_heading">Our <span class="theme_color">penetration</span> testing <br> team uses an industry</h2>
+                    <h2 class="sec-title_heading">Our penetration testing team uses an industry <span class="theme_color"></span> <br></h2>
                     <div class="sec-title_text">We provide the full spectrum of IT services and consulting for various industries.</div>
                 </div>
                 <div class="d-flex">
@@ -14,7 +14,7 @@
                         <a class="btn-style-five theme-btn btn-item" href="http://127.0.0.1:8000/about">
                             <div class="btn-wrap">
                                 <span class="text-one">About Us<i class="fa-solid fa-plus"></i></span>
-                                <span class="text-two">About Us<i class="fa-solid fa-plus"></i></span>
+                                <span class="text-two">Our Services<i class="fa-solid fa-plus"></i></span>
                             </div>
                         </a>
                     </div>
