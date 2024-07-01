@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class SingleSection extends Model
 {
     use HasFactory;
+    protected $guarded = ['id', 'created_at'];
 }

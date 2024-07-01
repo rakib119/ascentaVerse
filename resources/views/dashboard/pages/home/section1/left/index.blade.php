@@ -29,17 +29,24 @@
                                         <h2 class=" mb-4">Data</h2>
                                     </div>
                                     <div class="float-end d-none d-sm-block">
-                                        <a href="{{route('homeS1Left.publish')}}" class="btn btn-warning">Publish</a>
+                                        <form action="{{route('homeS1Left.publish')}}" method="post">
+                                            @csrf
+                                            <button class="btn btn-warning" type="submit">Publish</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="form py-3">
                                     @php
-                                      $route = $data->id ? route('homeS1Left.update') : route('homeS1Left.store');
-                                      $button_name = $data->id ? 'Update' : 'Submit';
-                                      $btn_class = $data->id ? 'btn-warning' : 'btn-success';
+                                      $update_id =   $data?->id;
+                                      $route = $update_id ? route('homeS1Left.update',$update_id) : route('homeS1Left.store',);
+                                      $button_name = $update_id ? 'Update' : 'Submit';
+                                      $btn_class = $update_id ? 'btn-info' : 'btn-success';
                                     @endphp
                                     <form action="{{ $route }}" method="post">
                                         @csrf
+                                        @if ($update_id)
+                                            @method('put'){{-- FOR UPDATE ONLY --}}
+                                        @endif
                                         <input type="hidden" name="section_id" value="1">
                                         <div class="row">
                                             <div class="col-lg-6">
@@ -47,9 +54,9 @@
                                                     <label class="form-label" for="lebel"> Lebel
                                                         <span class="text-danger">*</span></label>
                                                     <input id="lebel" type="text" class="form-control"
-                                                        value="{{ $data->Lebel ?? old('Lebel')  }}" name="lebel"
+                                                        value="{{ $data->lebel ?? old('lebel')  }}" name="lebel"
                                                         placeholder="Enter lebel" autofocus>
-                                                    @error('Lebel')
+                                                    @error('lebel')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
                                                 </div>

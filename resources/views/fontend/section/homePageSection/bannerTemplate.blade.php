@@ -4,10 +4,13 @@
         <!-- Content Column -->
         <div class="fluid-one_content-column">
             <div class="fluid-one_column-inner">
+                @php
+                    $title = preg_replace('/\*\*(.*?)\*\*/', "<span class='theme_color'>$1</span>", $data->title);
+                @endphp
                 <!-- Sec Title -->
                 <div class="sec-title">
-                    <div class="sec-title_title">{{$data->Lebel}}</div>
-                    <h2 class="sec-title_heading">{!! $data->title !!} <span class="theme_color"></span> <br></h2>
+                    <div class="sec-title_title">{{$data->lebel}}</div>
+                    <h2 class="sec-title_heading">{!! $title !!} <span class="theme_color"></span> <br></h2>
                     <div class="sec-title_text">{{$data->short_description}}</div>
                 </div>
                 <div class="d-flex">

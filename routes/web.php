@@ -22,12 +22,5 @@ Route::controller(BackendController::class)->prefix('admin')->group(function(){
     Route::get('/banner-publish', 'bannerPublish')->name('bannerPublish');
 });
 
-Route::controller(hs1LeftController::class)->prefix('home/s1/left')->group(function() //Home
-{
-    Route::get('/', 'index')->name('homeS1Left');
-    Route::post('/store', 'store')->name('homeS1Left.store');
-    Route::get('/edit', 'index')->name('homeS1Left.edit');
-    Route::get('/update', 'index')->name('homeS1Left.update');
-    Route::get('/delete{id}', 'destroy')->name('homeS1Left.destroy');
-    Route::get('/publish', 'publish')->name('homeS1Left.publish');
-});
+Route::resource('homeS1Left', hs1LeftController::class)->only(['index','store','update']);
+Route::post('homeS1Left/published',[hs1LeftController::class, 'published'])->name('homeS1Left.publish');

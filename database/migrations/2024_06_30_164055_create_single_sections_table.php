@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('single_sections', function (Blueprint $table) {
             $table->id();
             $table->integer('section_id');
-            $table->string('Lebel')->nullable();
+            $table->string('lebel')->nullable();
             $table->string('title')->nullable();
             $table->text('short_description')->max(600)->nullable();
             $table->text('description1')->nullable();
