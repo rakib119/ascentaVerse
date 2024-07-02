@@ -10,8 +10,8 @@
                          <h4>DashBoard</h4>
                          <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">DashBoard</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Home Projects</a></li>
-                            <li class="breadcrumb-item active">Projects List</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Home Management</a></li>
+                            <li class="breadcrumb-item active">Left Section(1)</li>
                         </ol>
                      </div>
                  </div>
@@ -38,10 +38,13 @@
                                 <div class="form py-3">
                                     @php
                                       $update_id =   $data?->id;
-                                      $route = $update_id ? route('homeS1Left.update',$update_id) : route('homeS1Left.store',);
+                                      $route = $update_id ? route('homeS1Left.update',$update_id) : route('homeS1Left.store');
                                       $button_name = $update_id ? 'Update' : 'Submit';
                                       $btn_class = $update_id ? 'btn-info' : 'btn-success';
                                     @endphp
+                                    @if (session('error'))
+                                        <h4 class="text-danger">Error: {{ session('error') }} ** </h4>
+                                    @endif
                                     <form action="{{ $route }}" method="post">
                                         @csrf
                                         @if ($update_id)

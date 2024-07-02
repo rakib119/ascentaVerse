@@ -53,15 +53,15 @@ class hs1LeftController extends Controller
      */
     public function published()
     {
-        try
+       try
         {
             $SingleSection = SingleSection::where('section_id',1)->first();
             $data = ['data'=> $SingleSection];
             // return  $data;
-            $content = View::make('fontend.section.homePageSection.bannerTemplate',$data)->render();
+            $content = View::make('fontend.section.homePageSection.s1Left.s1LeftTemplate',$data)->render();
 
             // Path to the new static Blade view file
-            $path = resource_path('views/fontend/section/homePageSection/banner_section.blade.php');
+            $path = resource_path('views/fontend/section/homePageSection/s1Left/s1Left.blade.php');
 
             // Write the rendered content to the Blade view file
             file_put_contents($path, $content);
@@ -70,8 +70,7 @@ class hs1LeftController extends Controller
         catch(Exception $e)
         {
             $message = $e->getMessage();
-            // return back()->with('success',$e->getMessage());
-            return back()->with('error','Some thing went wrong');
+            return back()->with('error',$message);
         }
     }
 
@@ -86,11 +85,8 @@ class hs1LeftController extends Controller
             'btn2'=>'nullable|max:150',
             'link2'=>'nullable|max:255',
         ]);
-        $SingleSection = SingleSection::findOrFail($id);
-        $SingleSection->fill($validatedData)->save();
 
-        return back()->with('success','Updated successfully');
-        /* try {
+        try {
             $SingleSection = SingleSection::findOrFail($id);
             $SingleSection->fill($validatedData)->save();
 
@@ -98,8 +94,8 @@ class hs1LeftController extends Controller
         }
         catch (Exception $e)
         {
-            return back()->with('success','Something went wrong');
-        } */
+            return back()->with('error',$e->getMessage());
+        }
     }
 
 }
