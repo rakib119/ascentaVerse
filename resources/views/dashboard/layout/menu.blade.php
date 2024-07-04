@@ -13,8 +13,9 @@
                 <span>Home Management</span>
             </a>
              <ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{route('homeS1Left.index')}}">Home S1 Left </a></li>
-                <li><a href="{{route('homeS1Right.index')}}">Home S1 Right </a></li>
+                <li><a href="{{route('homeS1Left.index')}}"> Home S1 Left </a></li>
+                <li><a href="{{route('homeS1Right.index')}}"> Home S1 Right </a></li>
+                <li><a href="{{route('homeS2.index')}}"> Home S2 (About) </a></li>
             </ul>
             {{--<ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{route('home_second_right.add')}}">After Slider Right Section </a></li>

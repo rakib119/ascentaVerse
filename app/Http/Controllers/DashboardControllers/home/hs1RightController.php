@@ -57,7 +57,12 @@ class hs1RightController extends Controller
             return back()->with('error',$e->getMessage());
         }
     }
-
+    public function edit(Request $request, string $id)
+    {
+        $banner = Banner::where('section_id',2)->findOrFail($id);
+        $data = ['banner'=> $banner];
+        return view('dashboard.pages.home.section1.right.edit',$data);
+    }
     /**
      * Display the specified resource.
      */
@@ -82,33 +87,40 @@ class hs1RightController extends Controller
              $message = $e->getMessage();
              return back()->with('error',$message);
          }
-     }
+    }
 
     public function update(Request $request, string $id)
     {
-        /* $validatedData = $request->validate([
-            'lebel'=>'required|max:40',
-            'title'=>'required|max:150',
-            'short_description'=>'required|max:600',
-            'btn1'=>'nullable|max:150',
-            'link1'=>'nullable|max:255',
-            'btn2'=>'nullable|max:150',
-            'link2'=>'nullable|max:255',
-        ]);
-        $SingleSection = SingleSection::findOrFail($id);
-        $SingleSection->fill($validatedData)->save(); */
-
-        return back()->with('success','Updated successfully');
-        /* try {
-            $SingleSection = SingleSection::findOrFail($id);
-            $SingleSection->fill($validatedData)->save();
-
-            return back()->with('success','Updated successfully');
-        }
-        catch (Exception $e)
+        try
         {
-            return back()->with('success','Something went wrong');
-        } */
+            $request->validate([
+                'image_name'=>'required|mimes:png,jpg'
+            ]);
+            $banner = Banner::findOrFail($id);
+            if ($request->hasFile('image_name')) {
+                $manager = new ImageManager(new Driver());
+                $image_file = $request->file('image_name');
+                $image_name = Str::random(15).'.'.$image_file->getClientOriginalExtension();
+                $image = $manager->read($image_file);
+                // $image = $image->resize(300,300);
+
+                $path = base_path('public/assets/images/banners/' . $image_name);
+                $image->save($path);
+                $file_location = base_path('public/assets/images/banners/' .  $banner->image_name);
+                // unlink($file_location);
+            }
+
+            $banner->image_name= $image_name;
+            $banner->save();
+            return redirect()->route('homeS1Right.index')->with('success','Updated successfully');
+        }
+        catch(Exception $e)
+        {
+            return back()->with('error',$e->getMessage());
+        }
+    }
+    public function destroy(){
+
     }
 
 }

@@ -29,3 +29,6 @@ Route::post('homeS1Left/published',[hs1LeftController::class, 'published'])->nam
 
 Route::resource('homeS1Right', hs1RightController::class)->only(['index','store','edit','update','destroy']);
 Route::post('homeS1Right/published',[hs1RightController::class, 'published'])->name('homeS1Right.publish');
+
+Route::resource('homeS2', hs1RightController::class)->only(['index','show']);
+Route::post('homeS2/published',[hs1RightController::class, 'published'])->name('homeS2.publish');

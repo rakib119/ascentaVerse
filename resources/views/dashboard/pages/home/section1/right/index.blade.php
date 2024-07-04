@@ -41,7 +41,7 @@
                                     @endif
                                     <form action="{{ route('homeS1Right.store') }}" method="post" enctype="multipart/form-data">
                                         @csrf
-                                        <input type="hidden" name="section_id" value="1">
+                                        <input type="hidden" name="section_id" value="2">{{-- Section Id 2 --}}
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
