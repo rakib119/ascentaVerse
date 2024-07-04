@@ -49,7 +49,7 @@
                                                         <span class="text-danger">*</span></label>
                                                     <input id="image_name" type="file"  class="form-control"
                                                         value="{{ old('image_name')  }}" name="image_name"
-                                                        placeholder="Enter Image" autofocus>
+                                                        placeholder="Enter Image"  accept="jpg,jpeg" autofocus>
                                                     @error('image_name')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
