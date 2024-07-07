@@ -154,7 +154,7 @@
                                                         <span class="text-danger">*</span></label>
                                                     <input id="img1" type="file" class="form-control"
                                                         value="{{ $data->img1 ?? old('img1') }}" name="img1"
-                                                        placeholder="Enter link 1" >
+                                                        placeholder="Enter link 1" onchange="loadFile(event,'imgOutput')">
                                                     @error('img1')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
@@ -170,6 +170,11 @@
                                                     @error('img2')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <img id="imgOutput" height="80" src="{{asset('assets/images/about/'.$data->img2)}}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">

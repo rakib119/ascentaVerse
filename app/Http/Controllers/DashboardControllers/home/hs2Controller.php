@@ -7,7 +7,10 @@ use App\Models\SingleSection;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 class hs2Controller extends Controller
 {
     /**
@@ -15,7 +18,7 @@ class hs2Controller extends Controller
      */
     public function index()
     {
-        $SingleSection = SingleSection::where('section_id',2)->first();
+        $SingleSection = SingleSection::where('section_id',3)->first();
         $data = ['data'=> $SingleSection];
         return view('dashboard.pages.home.section2.index',$data);
     }
@@ -25,33 +28,61 @@ class hs2Controller extends Controller
     public function store(Request $request)
     {
         // return $request;
-        $request->validate([
-            'lebel'=>'required|max:40',
-            'title'=>'required|max:150',
-            'short_description'=>'required|max:600',
-            'btn1'=>'nullable|max:150',
-            'btn2'=>'nullable|max:150',
-            'btn3'=>'nullable|max:150',
-            'link1'=>'nullable|max:255',
-            'link2'=>'nullable|max:150',
-            'img1'=>'nullable|max:50',
-            'img2'=>'nullable|max:50',
-        ]);
-        SingleSection::insert([
-            'lebel'=>$request->lebel,
-            'title'=>$request->title,
-            'section_id'=>$request->section_id,
-            'short_description'=>$request->short_description,
-            'btn1'=>$request->btn1,
-            'btn2'=>$request->btn2,
-            'btn3'=>$request->btn3,
-            'link1'=>$request->link1,
-            'link2'=>$request->link2,
-            'img1'=>$request->img1,
-            'img2'=>$request->img2,
-            'created_at'=>Carbon::now(),
-        ]);
-        return back()->with('success','Added successfully');
+        try
+        {
+            $request->validate([
+                'lebel'=>'required|max:40',
+                'title'=>'required|max:150',
+                'short_description'=>'required|max:600',
+                'btn1'=>'required|max:150',
+                'btn2'=>'required|max:150',
+                'btn3'=>'required|max:150',
+                'link1'=>'required|max:255',
+                'link2'=>'required|max:150',
+                'img2'=>'required|max:50',
+                'img1'=>'required|mimes:png,jpg'
+            ], [],
+            [
+                'btn1'=>'Button 1',
+                'btn2'=>'Button 2',
+                'btn3'=>'Button 3',
+                'link1' => 'Video 1 Caption ',
+                'link2'=> 'Video 1 link',
+                'img1'=> 'Photo',
+                'img2'=> 'Photo Caption'
+            ]);
+
+            if ($request->hasFile('img1')) {
+                $manager = new ImageManager(new Driver());
+                $image_file = $request->file('img1');
+                $image_name = Str::random(15).'.'.$image_file->getClientOriginalExtension();
+                $image = $manager->read($image_file);
+                // $image = $image->resize(300,300);
+
+                $path = base_path('public/assets/images/about/' . $image_name);
+                $image->save($path);
+
+            }
+            SingleSection::insert([
+                'lebel'=>$request->lebel,
+                'title'=>$request->title,
+                'section_id'=>$request->section_id,
+                'short_description'=>$request->short_description,
+                'btn1'=>$request->btn1,
+                'btn2'=>$request->btn2,
+                'btn3'=>$request->btn3,
+                'link1'=>$request->link1,
+                'link2'=>$request->link2,
+                'img1'=>$request->image_name,
+                'img2'=>$request->img2,
+                'created_at'=>Carbon::now(),
+            ]);
+            return back()->with('success','Added successfully');
+        }
+        catch(Exception $e)
+        {
+            return back()->with('error',$e->getMessage());
+        }
     }
 
     /**

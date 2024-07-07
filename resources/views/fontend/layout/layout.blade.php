@@ -66,7 +66,11 @@
 									<li><a href="{{ route('services') }}">Services</a></li>
 									<li><a href="{{ route('blog') }}">Blog</a></li>
 									<li>
-                                        <a class="d-block d-sm-none" href="{{ route('login') }}">Login</a>
+                                        @auth
+                                            <a class="d-block d-sm-none" href="#">{{auth()->user()->name}}</a>
+                                        @else
+                                            <a class="d-block d-sm-none" href="{{ route('login') }}">Login</a>
+                                        @endauth
                                     </li>
 								</ul>
 							</div>
@@ -75,16 +79,39 @@
 						<!-- Main Menu End-->
 
 						<div class="outer-box d-flex align-items-center">
-
-
 							<!-- Button Box -->
 							<div class="button-box">
-								<a class="btn-style-five theme-btn btn-item" href="{{route('login')}}">
-									<div class="btn-wrap">
-										<span class="text-one">Login<i class="fas fa-sign-in-alt"></i></span>
-										<span class="text-two">Login<i class="fas fa-sign-in-alt"></i></span>
-									</div>
-								</a>
+                                @auth
+                                    <a class="btn-style-two theme-btn btn-item"  href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Logout<i class="fas fa-sign-in-alt"></i></span>
+                                            <span class="text-two">Logout<i class="fas fa-sign-in-alt"></i></span>
+                                        </div>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                    {{-- <a class="btn-style-five theme-btn btn-item" href="#">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">{{auth()->user()->name}}</span>
+                                            <span class="text-two">{{auth()->user()->name}}</span>
+                                        </div>
+                                    </a> --}}
+                                @else
+                                    <a class="btn-style-two theme-btn btn-item" href="{{route('register')}}">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Register<i class="fas fa-sign-in-alt"></i></span>
+                                            <span class="text-two">Register<i class="fas fa-sign-in-alt"></i></span>
+                                        </div>
+                                    </a>
+                                    <a class="btn-style-five theme-btn btn-item" href="{{route('login')}}">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Login<i class="fas fa-sign-in-alt"></i></span>
+                                            <span class="text-two">Login<i class="fas fa-sign-in-alt"></i></span>
+                                        </div>
+                                    </a>
+                                @endauth
 							</div>
 
 							<!-- Mobile Navigation Toggler -->
