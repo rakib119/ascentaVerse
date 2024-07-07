@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ "welkin moon -Dashboard" }}</title>
+    <title>{{ "AscentaVerse -Dashboard" }}</title>
     <link rel="icon" href="{{ asset('assets') }}/images/favicon.png" sizes="32x32" type="image/png">
     <link href="{{ asset('dashboard/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}"
         rel="stylesheet" type="text/css" />

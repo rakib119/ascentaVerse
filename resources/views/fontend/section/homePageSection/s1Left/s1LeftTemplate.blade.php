@@ -6,7 +6,7 @@
         <!-- Sec Title -->
         <div class="sec-title">
             <div class="sec-title_title">{{$data->lebel}}</div>
-            <h2 class="sec-title_heading">{!! $title !!} <span class="theme_color"></span> <br></h2>
+            <h2 class="sec-title_heading">{!! $title !!}</h2>
             <div class="sec-title_text">{{$data->short_description}}</div>
         </div>
         <div class="d-flex">

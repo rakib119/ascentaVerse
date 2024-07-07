@@ -11,7 +11,7 @@
                          <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">DashBoard</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Home Management</a></li>
-                            <li class="breadcrumb-item active">Left Section(1)</li>
+                            <li class="breadcrumb-item active">Right Section(3) Partners</li>
                         </ol>
                      </div>
                  </div>
@@ -29,7 +29,7 @@
                                         <h2 class=" mb-4">Data</h2>
                                     </div>
                                     <div class="float-end d-none d-sm-block">
-                                        <form action="{{route('homeS1Left.publish')}}" method="post">
+                                        <form action="{{route('homeS3Right.publish')}}" method="post">
                                             @csrf
                                             <button class="btn btn-warning" type="submit">Publish</button>
                                         </form>
@@ -38,7 +38,7 @@
                                 <div class="form py-3">
                                     @php
                                       $update_id =   $data?->id;
-                                      $route = $update_id ? route('homeS1Left.update',$update_id) : route('homeS1Left.store');
+                                      $route = $update_id ? route('homeS3Right.update',$update_id) : route('homeS3Right.store');
                                       $button_name = $update_id ? 'Update' : 'Submit';
                                       $btn_class = $update_id ? 'btn-info' : 'btn-success';
                                     @endphp
@@ -50,7 +50,7 @@
                                         @if ($update_id)
                                             @method('put'){{-- FOR UPDATE ONLY --}}
                                         @endif
-                                        <input type="hidden" name="section_id" value="1">
+                                        <input type="hidden" name="section_id" value="3">
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
@@ -84,54 +84,6 @@
                                                         placeholder="Enter short description">
 
                                                     @error('short_description')
-                                                        <h6 class="text-danger"> {{ $message }}</h6>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="btn1">Button 1
-                                                        <span class="text-danger">*</span></label>
-                                                    <input id="btn1" type="text" class="form-control"
-                                                        value="{{ $data->btn1 ?? old('btn1') }}" name="btn1"
-                                                        placeholder="Enter button 1">
-                                                    @error('btn1')
-                                                        <h6 class="text-danger"> {{ $message }}</h6>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="link1">Button 1 link
-                                                        <span class="text-danger">*</span></label>
-                                                    <input id="link1" type="text" class="form-control"
-                                                        value="{{ $data->link1 ?? old('link1') }}" name="link1"
-                                                        placeholder="Enter link 1" >
-                                                    @error('link1')
-                                                        <h6 class="text-danger"> {{ $message }}</h6>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="btn1">Button 2
-                                                        <span class="text-danger">*</span></label>
-                                                    <input id="btn2" type="text" class="form-control"
-                                                        value="{{ $data->btn2 ?? old('btn2') }}" name="btn2"
-                                                        placeholder="Enter button 2">
-                                                    @error('btn2')
-                                                        <h6 class="text-danger"> {{ $message }}</h6>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="link2">Button 2 link
-                                                        <span class="text-danger">*</span></label>
-                                                    <input id="link2" type="text" class="form-control"
-                                                        value="{{ $data->link2 ?? old('link2') }}" name="link2"
-                                                        placeholder="Enter link 2" >
-                                                    @error('link2')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
                                                 </div>

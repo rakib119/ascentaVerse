@@ -4,6 +4,8 @@ use App\Http\Controllers\BackendController;
 use App\Http\Controllers\DashboardControllers\home\hs1LeftController;
 use App\Http\Controllers\DashboardControllers\home\hs1RightController;
 use App\Http\Controllers\DashboardControllers\home\hs2Controller;
+use App\Http\Controllers\DashboardControllers\home\hs3LeftController;
+use App\Http\Controllers\DashboardControllers\home\hs3RightController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +35,9 @@ Route::post('homeS1Right/published',[hs1RightController::class, 'published'])->n
 
 Route::resource('homeS2', hs2Controller::class)->only(['index','store','update']);
 Route::post('homeS2/published',[hs2Controller::class, 'published'])->name('homeS2.publish');
+
+Route::resource('homeS3Left', hs3LeftController::class)->only(['index','store','edit','update','destroy']);
+Route::post('homeS3Left/published',[hs3LeftController::class, 'published'])->name('homeS1Right.publish');
+
+Route::resource('homeS3Right', hs3RightController::class)->only(['index','store','update']);
+Route::post('homeS3Right/published',[hs3RightController::class, 'published'])->name('homeS3Right.publish');

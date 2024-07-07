@@ -52,41 +52,10 @@
     </style>
 @endsection
 @section('mainContent')
-    @include('fontend.section.homePageSection.banner_section') {{-- Banner Section --}}
-    @include('fontend.section.homePageSection.s2About.about_section')
-    <!-- End About One -->
-    <!-- Fluid Section One -->
-    <section class="fluid-one">
-        <div class="outer-container d-flex">
-            <!-- Content Column -->
-            <div class="fluid-one_content-column">
-                <div class="fluid-one_column-inner row">
-                    <!-- Sec Title -->
-                    @for ($i=1; $i<=6; $i++)
-                        <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
-                            <div class="service-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="service-block_two-image">
-                                    <img src="{{asset("assets/images/partners/h3-client$i.png")}}" alt="{{asset("partn")}}" />
-                                </div>
-                            </div>
-                        </div>
-                    @endfor
-                </div>
-            </div>
-            <!-- Content Column -->
-            <div class="fluid-one_content-column">
-                <div class="fluid-one_column-inner">
-                    <!-- Sec Title -->
-                    <div class="sec-title">
-                        <div class="sec-title_title">Our Partners</div>
-                        <h2 class="sec-title_heading">Long Time Project, with <br> <span class="theme_color"> Our Best Partner</span></h2>
-                        <div class="sec-title_text">We’ve been lucky to collaborate with a long list of customers, located in and out of the country. Thanks to them we have grown as professionals.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Fluid Section One -->
+    @include('fontend.section.homePageSection.banner_section')          {{-- Banner Section --}}
+    @include('fontend.section.homePageSection.s2About.about_section')   {{-- About Section --}}
+    @include('fontend.section.homePageSection.partner_section')         {{-- Partner Section --}}
+
     <!-- Team One -->
     <section class="team-one">
         <div class="auto-container">
