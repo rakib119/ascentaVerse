@@ -119,8 +119,9 @@ class hs1RightController extends Controller
             return back()->with('error',$e->getMessage());
         }
     }
-    public function destroy(){
-
+    public function destroy(Request $request, string $id){
+        Banner::findOrFail($id)->delete();
+        return back()->with('success','Deleted successfully');
     }
 
 }
