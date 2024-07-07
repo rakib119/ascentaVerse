@@ -39,13 +39,13 @@
                                     @php
                                       $update_id =   $data?->id;
                                       $route = $update_id ? route('homeS2.update',$update_id) : route('homeS2.store');
-                                      $button_name = $update_id ? 'Update' : 'Submit';
-                                      $btn_class = $update_id ? 'btn-info' : 'btn-success';
+                                      $button_name  = $update_id ? 'Update' : 'Submit';
+                                      $btn_class    = $update_id ? 'btn-info' : 'btn-success';
                                     @endphp
-                                    @if (session('error'))
-                                        <h4 class="text-danger">Error: {{ session('error') }} ** </h4>
+                                    @if (session('codeError'))
+                                        <h4 class="text-danger">Error: {{ session('codeError') }} ** </h4>
                                     @endif
-                                    <form action="{{ $route }}" method="post">
+                                    <form action="{{ $route }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         @if ($update_id)
                                             @method('put'){{-- FOR UPDATE ONLY --}}
@@ -154,7 +154,7 @@
                                                         <span class="text-danger">*</span></label>
                                                     <input id="img1" type="file" class="form-control"
                                                         value="{{ $data->img1 ?? old('img1') }}" name="img1"
-                                                        placeholder="Enter link 1" onchange="loadFile(event,'imgOutput')">
+                                                        placeholder="Enter link 1" onchange="loadFile(event,'imgOutput')" accept=".jpg,.jpeg,.png">
                                                     @error('img1')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
@@ -174,13 +174,14 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <img id="imgOutput" height="80" src="{{asset('assets/images/about/'.$data->img2)}}">
+                                                    <img id="imgOutput" height="80" src="{{asset('assets/images/about/'.$data->img1)}}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="description1">Description 1 <span class="text-danger">*</span></label>
-                                                    <textarea class="form-control" id="description1" rows="4" placeholder="Enter Description For Button 1">{{ $data->description1 ?? old('description1') }}</textarea>
+                                                    <input  id="description1" type="text" class="form-control" value="{{ $data->description1 ?? old('description1') }}"  name="description1" placeholder="Enter Description For Button 1">
+
                                                     @error('description1')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
@@ -189,7 +190,9 @@
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="description2">Description 2 <span class="text-danger">*</span></label>
-                                                    <textarea class="form-control" id="description2" rows="4" placeholder="Enter Description For Button 2">{{ $data->description2 ?? old('description2') }}</textarea>
+
+                                                    <input  id="description2" type="text" class="form-control" value="{{ $data->description2 ?? old('description2') }}"  name="description2" placeholder="Enter Description For Button 2">
+
                                                     @error('description2')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
@@ -198,7 +201,7 @@
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="description3">Description 3 <span class="text-danger">*</span></label>
-                                                    <textarea class="form-control" id="description3" rows="4" placeholder="Enter Description For Button 3">{{ $data->description3 ?? old('description3') }}</textarea>
+                                                    <input  id="description3" type="text" class="form-control" value="{{ $data->description3 ?? old('description3') }}"  name="description3" placeholder="Enter Description For Button 3">
                                                     @error('description3')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror

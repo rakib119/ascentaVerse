@@ -5,9 +5,12 @@
             <div class="about-one_content col-lg-6 col-md-12 col-sm-12">
                 <div class="about-one_content-inner">
                     <div class="sec-title">
-                        <div class="sec-title_title">About us</div>
-                                                <h2 class="sec-title_heading">Choose <span>The Best</span> IT Service Company</h2>
-                        <div class="sec-title_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempo rincididunt ut labore et dolore magna.</div>
+                        <div class="sec-title_title">{{ $data->lebel }}</div>
+                        @php
+                            $title = preg_replace('/\*\*(.*?)\*\*/', "<span>$1</span>", $data->title);
+                        @endphp
+                        <h2 class="sec-title_heading">{!! $title !!}</h2>
+                        <div class="sec-title_text">{{$data->short_description}}</div>
                     </div>
 
                     <!-- About Info Tabs -->
@@ -17,9 +20,9 @@
 
                             <!-- Tab Btns -->
                             <ul class="tab-btns tab-buttons clearfix">
-                                <li data-tab="#prod-mission" class="tab-btn active-btn">Our Mission</li>
-                                <li data-tab="#prod-vision" class="tab-btn">Our Vision</li>
-                                <li data-tab="#prod-value" class="tab-btn">Our Mission</li>
+                                <li data-tab="#prod-mission" class="tab-btn active-btn">{{$data->btn1}}</li>
+                                <li data-tab="#prod-vision" class="tab-btn">{{$data->btn2}}</li>
+                                <li data-tab="#prod-value" class="tab-btn">{{$data->btn1}}</li>
                             </ul>
 
                             <!-- Tabs Container -->
@@ -28,21 +31,21 @@
                                 <!-- Tab / Active Tab -->
                                 <div class="tab active-tab" id="prod-mission">
                                     <div class="content">
-                                        <div class="text">An IT firm or MSP who keeps your IT running smoothly at all times is like a plumber who fixes your pipes; that’s what they are supposed to do. Many IT firms struggle to keep themselves and their IT from falling apart. We’ve raised the standards in this industry and are a leading cybersecurity.</div>
+                                        <div class="text">{{$data->description1}}</div>
                                     </div>
                                 </div>
 
                                 <!-- Tab -->
                                 <div class="tab" id="prod-vision">
                                     <div class="content">
-                                        <div class="text">An IT firm or MSP who keeps your IT running smoothly at all times is like a plumber who fixes your pipes; that’s what they are supposed to do. Many IT firms struggle to keep themselves and their IT from falling apart. We’ve raised the standards in this industry and are a leading cybersecurity.</div>
+                                        <div class="text">{{$data->description2}}</div>
                                     </div>
                                 </div>
 
                                 <!-- Tab -->
                                 <div class="tab" id="prod-value">
                                     <div class="content">
-                                        <div class="text">An IT firm or MSP who keeps your IT running smoothly at all times is like a plumber who fixes your pipes; that’s what they are supposed to do. Many IT firms struggle to keep themselves and their IT from falling apart. We’ve raised the standards in this industry and are a leading cybersecurity.</div>
+                                        <div class="text">{{$data->description3}}</div>
                                     </div>
                                 </div>
 
@@ -51,8 +54,8 @@
                     </div>
 
                     <!-- About One Detail -->
-                    <a class="about-one_detail lightbox-video" href="https://www.youtube.com/watch?v=kxPCFljwJws">
-                        Check details about our company
+                    <a class="about-one_detail lightbox-video" href="{{$data->link2}}">
+                        {{$data->link1}}
                         <span class="play-icon"><span class="fa-solid fa-play fa-fw"></span><i class="ripple"></i></span>
                     </a>
 
@@ -63,13 +66,13 @@
                 <div class="about-one-image-inner">
                     <div class="about-one_color-layer"></div>
                     <div class="about-cicle_layer">
-                        <img src="http://127.0.0.1:8000/assets/images/icons/circle-layer.png" alt="" />
+                        <img src="{{asset('assets/images/icons/circle-layer.png')}}" alt="" />
                     </div>
                     <div class="about-one_image">
-                        <img src="http://127.0.0.1:8000/assets/images/about/zl128vOyUwz0Eel.jpg" alt="" />
+                        <img src="{{asset('assets/images/about/'.$data->img1)}}" alt="" />
                     </div>
-                    <div class="about-one_bold-text">About us</div>
-                    <div class="about-one_image-text">We are a certified IT Service company.111</div>
+                    <div class="about-one_bold-text">{{ $data->lebel }}</div>
+                    <div class="about-one_image-text">{{$data->img2}}</div>
                 </div>
             </div>
         </div>
