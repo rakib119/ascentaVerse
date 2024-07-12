@@ -43,7 +43,7 @@
 				<div class="inner-container d-flex justify-content-between align-items-center flex-wrap">
 					<!-- Logo Box -->
 					<div class="logo"><a href="{{ route('home') }}">
-                        <img src="{{asset('assets/images/logo-2.png')}}" alt="" title="">
+                        <img src="{{asset('assets/images/logo.png')}}" alt="" title="">
                     </a></div>
 
 
@@ -65,6 +65,10 @@
 									<li><a href="{{ route('about') }}">About Us</a></li>
 									<li><a href="{{ route('services') }}">Services</a></li>
 									<li><a href="{{ route('blog') }}">Blog</a></li>
+                                    @guest
+                                        <li><a href="{{route('register')}}">Register</a></li>
+                                    @endguest
+
 									<li>
                                         @auth
                                             <a class="d-block d-sm-none" href="#">{{auth()->user()->name}}</a>
@@ -99,12 +103,6 @@
                                         </div>
                                     </a> --}}
                                 @else
-                                    <a class="btn-style-two theme-btn btn-item" href="{{route('register')}}">
-                                        <div class="btn-wrap">
-                                            <span class="text-one">Register<i class="fas fa-sign-in-alt"></i></span>
-                                            <span class="text-two">Register<i class="fas fa-sign-in-alt"></i></span>
-                                        </div>
-                                    </a>
                                     <a class="btn-style-five theme-btn btn-item" href="{{route('login')}}">
                                         <div class="btn-wrap">
                                             <span class="text-one">Login<i class="fas fa-sign-in-alt"></i></span>
@@ -184,7 +182,7 @@
 
 
     <!-- Footer -->
-	<footer class="main-footer" style="background-image:url('assets/images/background/pattern-11.png)">
+	<footer class="main-footer" style="background-image:url('assets/images/background/pattern-11.png')">
 		<div class="auto-container">
 			<!-- Widgets Section -->
 			<div class="widgets-section">

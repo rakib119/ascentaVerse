@@ -16,7 +16,7 @@
                 <li><a href="{{route('homeS1Left.index')}}"> Home S1 Left </a></li>
                 <li><a href="{{route('homeS1Right.index')}}"> Home S1 Right </a></li>
                 <li><a href="{{route('homeS2.index')}}"> Home S2 (About) </a></li>
-                {{-- <li><a href="{{route('homeS3Left.index')}}"> Home S3 Left(Partners) </a></li> --}}
+                <li><a href="{{route('homeS3Left.index')}}"> Home S3 Left(Partners) </a></li>
                 <li><a href="{{route('homeS3Right.index')}}"> Home S3 Right(Partners) </a></li>
             </ul>
             {{--<ul class="sub-menu" aria-expanded="false">

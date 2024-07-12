@@ -19,9 +19,9 @@ class hs3LeftController extends Controller
      */
     public function index()
     {
-        $banners = Banner::where('section_id',5)->get();
-        $banners = ['banners'=> $banners];
-        return view('dashboard.pages.home.section.right.index',$banners);
+        $photos = Banner::where('section_id',5)->get();
+        $photos = ['photos'=> $photos];
+        return view('dashboard.pages.home.section3.left.index',$photos);
     }
     /**
      * Store a newly created resource in storage.
@@ -40,13 +40,13 @@ class hs3LeftController extends Controller
                 $image = $manager->read($image_file);
                 // $image = $image->resize(300,300);
 
-                $path = base_path('public/assets/images/partners/' . $image_name);
+                $path = base_path('public/assets/images/banners/' . $image_name);
                 $image->save($path);
             }
 
             Banner::insert([
                 'image_name'=>$image_name,
-                'section_id'=>4,
+                'section_id'=>2,
                 'status_active'=>1,
                 'created_at'=>Carbon::now(),
             ]);
@@ -61,7 +61,7 @@ class hs3LeftController extends Controller
     {
         $banner = Banner::where('section_id',2)->findOrFail($id);
         $data = ['banner'=> $banner];
-        return view('dashboard.pages.home.section1.right.edit',$data);
+        return view('dashboard.pages.home.section3.left.edit',$data);
     }
     /**
      * Display the specified resource.
@@ -73,10 +73,10 @@ class hs3LeftController extends Controller
              $Banner = Banner::where(['section_id'=>2,'status_active'=>1])->get();
              $data = ['banners'=> $Banner];
              // return  $data;
-             $content = View::make('fontend.section.homePageSection.s3Right.s3RightTemplate',$data)->render();
+             $content = View::make('fontend.section.homePageSection.s1left.s1leftTemplate',$data)->render();
 
              // Path to the new static Blade view file
-             $path = resource_path('views/fontend/section/homePageSection/s3Right/s3Right.blade.php');
+             $path = resource_path('views/fontend/section/homePageSection/s1left/s1left.blade.php');
 
              // Write the rendered content to the Blade view file
              file_put_contents($path, $content);
@@ -112,15 +112,16 @@ class hs3LeftController extends Controller
 
             $banner->image_name= $image_name;
             $banner->save();
-            return redirect()->route('homeS1Right.index')->with('success','Updated successfully');
+            return redirect()->route('homeS1left.index')->with('success','Updated successfully');
         }
         catch(Exception $e)
         {
             return back()->with('error',$e->getMessage());
         }
     }
-    public function destroy(){
-
+    public function destroy(Request $request, string $id){
+        Banner::findOrFail($id)->delete();
+        return back()->with('success','Deleted successfully');
     }
 
 }

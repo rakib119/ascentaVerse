@@ -26,10 +26,10 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                        <h2 class=" mb-4">Banner Photo</h2>
+                                        <h2 class=" mb-4">Partner Logo</h2>
                                     </div>
                                     <div class="float-end d-none d-sm-block">
-                                        <form action="{{route('homeS1Right.publish')}}" method="post">
+                                        <form action="{{route('homeS3Left.publish')}}" method="post">
                                             @csrf
                                             <button class="btn btn-warning" type="submit">Publish</button>
                                         </form>
@@ -39,7 +39,7 @@
                                     @if (session('error'))
                                         <h4 class="text-danger">Error: {{ session('error') }} ** </h4>
                                     @endif
-                                    <form action="{{ route('homeS1Right.store') }}" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('homeS3Left.store') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <input type="hidden" name="section_id" value="2">{{-- Section Id 2 --}}
                                         <div class="row">
@@ -84,14 +84,14 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                        <h2 class=" mb-4">Banner Photo List</h2>
+                                        <h2 class=" mb-4">Partner Logo List</h2>
                                     </div>
                                 </div>
                                 <table id="myTable" class="table table-centered table-nowrap mb-0">
                                     <thead class="thead-light">
                                         <tr>
                                             <th>SL</th>
-                                            <th>Image </th>
+                                            <th>Logo </th>
                                             <th>Active Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -109,9 +109,9 @@
                                                     Action <i class="fas fa-angle-down"></i>
                                                     </button>
                                                         <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="{{route('homeS1Right.edit',$v->id)}}">Edit</a>
+                                                        <li><a class="dropdown-item" href="{{route('homeS3Left.edit',$v->id)}}">Edit</a>
                                                         <li>
-                                                                <form id="deleteData{{$v->id}}" action="{{ route('homeS1Right.destroy', $v->id) }}"
+                                                                <form id="deleteData{{$v->id}}" action="{{ route('homeS3Left.destroy', $v->id) }}"
                                                                     method="post">
                                                                     @csrf
                                                                     @method('delete')

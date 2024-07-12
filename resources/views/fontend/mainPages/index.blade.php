@@ -1,254 +1,479 @@
 @extends('fontend.layout.layout')
 @section('css')
 
-    <style>
-      :root {
-        --main-color: #3630ff;
-        --accent-color: #9000ff;
-        --highlight-color: #08d9ff;
-      }
-      .team-member {
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.3s;
-      }
-      .team-member img {
-        width: 100%;
-        height: auto;
-      }
-      .team-info {
-        text-align: center;
-        padding: 20px;
-      }
-      .team-info h4 {
-        margin: 10px 0;
-        color: var(--main-color);
-      }
-      .team-info .position {
-        color: var(--accent-color);
-      }
-      .team-hover {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(54, 48, 255, 0.8);
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-      .team-hover .social-links a {
-        margin: 0 5px;
-        color: #fff;
-      }
-      .team-member:hover .team-hover {
-        opacity: 1;
-      }
-    </style>
 @endsection
 @section('mainContent')
     @include('fontend.section.homePageSection.banner_section')          {{-- Banner Section --}}
     @include('fontend.section.homePageSection.s2About.about_section')   {{-- About Section --}}
     @include('fontend.section.homePageSection.partner_section')         {{-- Partner Section --}}
 
-    <!-- Team One -->
-    <section class="team-one">
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title centered">
-                <div class="sec-title_title">Team Member</div>
-                <h2 class="sec-title_heading">Passionate Personalities, <br> <span class="theme_color">Versatile</span> Brains</h2>
-            </div>
-            <div class="row clearfix">
-                @for ($i=1; $i<5; $i++)
-                    <!-- Team One -->
-                    <div class="team_one col-lg-3 col-md-6 col-sm-12">
-                        <div class="team_one-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="team_one-image">
-                                <div class="bg-white rounded shadow-sm py-5 px-4" style="margin-bottom: 5rem;">
-                                    <img style="width: 200px; height:200px;" src="{{asset("assets/images/resource/team-$i.jpg")}}" alt="" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
+        <!-- Services Section START-->
+        <section class="services-card-section">
+            <div class="container">
+                <!-- Header Section -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card-header-section mx-auto">
+                            <div>
+                                <div class="sub-title">What We Do</div>
+                                <div class="title">We Run all kinds of Service that your <span
+                                        class="highlight">Success</span>
                                 </div>
-                                <div class="team_one-content">
-                                    <h5 class="team-one_title"><a href="team-detail.html">Ashish Sudra</a></h5>
-                                    <div class="team-one_designation">Founder & CEO</div>
-                                </div>
-
-                                <div class="team_one-overlay">
-                                    <div class="team-one_overlay-content">
-                                        <div class="team_one-text">Our goal is to propel your to business forward u world-class IT cybersecurity and technology We provide the expert solutions.</div>
-                                        <a class="team_one-more" href="team-detail.html">Read more</a>
-                                    </div>
-                                </div>
-
                             </div>
-                            <!-- Social Box -->
-                            <ul class="team-one_social">
-                                <li><a href="https://www.facebook.com/" class="fa-brands fa-facebook-f fa-fw"></a></li>
-                                <li><a href="https://www.twitter.com/" class="fa-brands fa-twitter fa-fw"></a></li>
-                                <li><a href="https://dribbble.com/" class="fa-brands fa fa-dribbble fa-fw"></a></li>
-                            </ul>
                         </div>
                     </div>
-                @endfor
-            </div>
-        </div>
-    </section>
-    <!-- End Team One -->
-    <!-- Team One -->
-    <section class="team-one">
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title centered">
-                <div class="sec-title_title">Team Member2</div>
-                <h2 class="sec-title_heading">Passionate Personalities, <br> <span class="theme_color">Versatile</span> Brains</h2>
-            </div>
-            <div class="row clearfix">
-                @for ($i=1; $i<5; $i++)
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="team-member">
-                        <div class="bg-white rounded shadow-sm py-5 px-4" style="margin-bottom: 5rem;">
-                            <img style="width: 200px; height:200px;" src="{{asset("assets/images/resource/team-$i.jpg")}}" alt="" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" />
-                        </div>
-                      <div class="team-info">
-                        <h4>Veronica Johnson</h4>
-                        <div class="position">Web Developer</div>
-                      </div>
-                      <div class="team-hover">
-                          <div  >
-                            {{-- style="background: url('{{asset("assets/images/resource/team-$i.jpg")}}');background-repeat: no-repeat;  background-size: auto; " --}}
+                </div>
 
-                            <p>Lead the team of passionate developers, designers and the strategists with a thought.</p>
-                            <div class="social-links">
-                                <a href="#" target="_blank"><i class="fa-brands fa-facebook-f fa-fw"></i></a>
-                                <a href="#" target="_blank"><i class="fa-brands fa-twitter fa-fw"></i></a>
-                                <a href="#" target="_blank"><i class="fa-brands fa fa-dribbble fa-fw"></i></a>
-                            </div>
-                            <a class="btn btn-primary mt-2" href="#">Read More</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                @endfor
-            </div>
-        </div>
-    </section>
-    <!-- End Team One -->
-    <!-- Services Two -->
-    <section class="services-two">
-        <div class="bubble-dotted">
-            <span class="dotted dotted-1"></span>
-            <span class="dotted dotted-2"></span>
-            <span class="dotted dotted-3"></span>
-            <span class="dotted dotted-4"></span>
-            <span class="dotted dotted-5"></span>
-            <span class="dotted dotted-6"></span>
-            <span class="dotted dotted-7"></span>
-            <span class="dotted dotted-8"></span>
-            <span class="dotted dotted-9"></span>
-            <span class="dotted dotted-10"></span>
-        </div>
-        <div class="auto-container">
-            <!-- Sec Title Three -->
-            <div class="sec-title_three centered">
-                <div class="sec-title_three-big_title">Services</div>
-                <div class="sec-title_three-title">Awesome Services</div>
-                <h2 class="sec-title_three-heading">Our Awesome <span>services</span> to <br> give you success.</h2>
-                <div class="sec-title_three-text">An IT firm or MSP who keeps your IT running smoothly.</div>
-            </div>
-            <div class="services-carousel owl-carousel owl-theme">
-                <!-- Service Block Four -->
-                @for ($i=1; $i<5; $i++)
-                    <div class="service-block_four">
-                        <div class="service-block_four-inner">
-                            <div class="team_one-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="team_one-image">
-                                    <img src="{{asset("assets/images/resource/team-$i.jpg")}}" alt="" />
-                                    <div class="team_one-content">
-                                        <h5 class="team-one_title"><a href="team-detail.html">Ashish Sudra</a></h5>
-                                        <div class="team-one_designation">Founder & CEO</div>
-                                    </div>
-
-                                    <div class="team_one-overlay">
-                                        <div class="team-one_overlay-content">
-                                            <div class="team_one-text">Our goal is to propel your to business forward u world-class IT cybersecurity and technology We provide the expert solutions.</div>
-                                            <a class="team_one-more" href="team-detail.html">Read more</a>
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="card card-custom h-100">
+                            <img src="https://demo.casethemes.net/itfirm/wp-content/uploads/2021/09/service7-220x220.jpg"
+                                class="card-img-top mx-auto" alt="Backup & Recovery">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <i class="fas fa-database fa-2x text-primary"></i>
+                                </div>
+                                <div class="card-center">
+                                    <h5 class="card-title">Backup & Recovery</h5>
+                                    <p class="card-text">Our goal is to propel your to business forward…</p>
+                                    <a class="btn-style-tean theme-btn btn-item" href="http://127.0.0.1:8000/about">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Read more <i class="fas fa-plus"></i></span>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                                <!-- Social Box -->
-                                <ul class="team-one_social">
-                                    <li><a href="https://www.facebook.com/" class="fa-brands fa-facebook-f fa-fw"></a></li>
-                                    <li><a href="https://www.twitter.com/" class="fa-brands fa-twitter fa-fw"></a></li>
-                                    <li><a href="https://dribbble.com/" class="fa-brands fa fa-dribbble fa-fw"></a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>
-                @endfor
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="card card-custom h-100">
+                            <img src="https://demo.casethemes.net/itfirm/wp-content/uploads/2021/09/service6-220x220.jpg"
+                                class="card-img-top mx-auto" alt="VoIP Solutions">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <i class="fas fa-phone fa-2x text-primary"></i>
+                                </div>
+                                <div class="card-center">
+                                    <h5 class="card-title">VoIP Solutions</h5>
+                                    <p class="card-text">Our goal is to propel your to business forward…</p>
+                                    <a class="btn-style-tean theme-btn btn-item" href="http://127.0.0.1:8000/about">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Read more <i class="fas fa-plus"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="card card-custom h-100">
+                            <img src="https://demo.casethemes.net/itfirm/wp-content/uploads/2021/09/service8-220x220.jpg"
+                                class="card-img-top mx-auto" alt="Consulting Planning">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <i class="fas fa-chart-line fa-2x text-primary"></i>
+                                </div>
+                                <div class="card-center">
+                                    <h5 class="card-title">Consulting Planning</h5>
+                                    <p class="card-text">Our goal is to propel your to business forward…</p>
+                                    <a class="btn-style-tean theme-btn btn-item" href="http://127.0.0.1:8000/about">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Read more <i class="fas fa-plus"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="card card-custom h-100">
+                            <img src="https://demo.casethemes.net/itfirm/wp-content/uploads/2021/09/service5-220x220.jpg"
+                                class="card-img-top mx-auto" alt="IT Consultency">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <i class="fas fa-cloud fa-2x text-primary"></i>
+                                </div>
+                                <div class="card-center">
+                                    <h5 class="card-title">IT Consultency</h5>
+                                    <p class="card-text">Our goal is to propel your to business forward…</p>
+                                    <a class="btn-style-tean theme-btn btn-item" href="http://127.0.0.1:8000/about">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Read more <i class="fas fa-plus"></i></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center service-btn">
+                    <a href="https://demo.casethemes.net/itfirm/services/" class="btn btn-primary">More Service <i
+                            class="fas fa-plus"></i></a>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- End Services Two -->
+        </section>
+        <!-- Services Section END-->
 
-    {{-- <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne" aria-expanded="false"
-                aria-controls="flush-collapseOne">
-            Accordion Item #1
-            </button>
-        </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse"
-            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended
-                to demonstrate the <code>.accordion-flush</code> class. This is the first item's
-                accordion body.
+        <!-- tem member section start -->
+        <section class="team-section">
+            <div class="team-heading">
+                <div class="sub-title">Team Member</div>
+                <div class="title">Our Awesome <span class="highlight">Technology</span> Team Member</div>
             </div>
-        </div>
-        </div>
-        <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                aria-controls="flush-collapseTwo">
-            Accordion Item #2
-            </button>
-        </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse"
-            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended
-                to demonstrate the <code>.accordion-flush</code> class. This is the second item's
-                accordion body. Let's imagine this being filled with
-                some actual content.
+            <div class="container mx-auto mt-4 tem">
+                <div class="row row-cols-1 row-cols-md-4 g-4 d-flex flex-row flex-wrap justify-content-center">
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="initial-view">
+                                <img src="https://demo.casethemes.net/itfirm/wp-content/uploads/2021/11/h3-team1-av-260x260.jpg"
+                                    class="card-img-top" alt="Veronica Johnson">
+                                <div class="card-body">
+                                    <h5 class="card-title">Veronica Johnson</h5>
+                                    <p class="card-text">Web Developer</p>
+                                    <a class="item--details"
+                                        href="https://demo.casethemes.net/itfirm/team-details/">+</a>
+                                </div>
+                            </div>
+                            <div class="detailed-view"
+                                style="background-image: url('https://demo.casethemes.net/itfirm/wp-content/uploads/2021/11/h3-team1.jpg'); background-size: cover;">
+                                <div class="overlay"></div>
+                                <div class="item--holder-inner">
+                                    <div class="item--desc">Lead the team of passionate developers, designers, and
+                                        strategists
+                                        with a thought.</div>
+                                    <h4 class="item--title"><a
+                                            href="https://demo.casethemes.net/itfirm/team-details/">Veronica
+                                            Johnson</a></h4>
+                                    <div class="item--position">Web Developer</div>
+                                    <div class="item--social">
+                                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary"
+                                            style="background-color: #fff; color: black;">Read More +</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="initial-view">
+                                <img src="https://demo.casethemes.net/itfirm/wp-content/uploads/2021/11/h3-team2-av-260x260.jpg"
+                                    class="card-img-top" alt="Chanda Lewis">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chanda Lewis</h5>
+                                    <p class="card-text">Web Developer</p>
+                                    <a class="item--details"
+                                        href="https://demo.casethemes.net/itfirm/team-details/">+</a>
+                                </div>
+                            </div>
+                            <div class="detailed-view"
+                                style="background-image: url('https://demo.casethemes.net/itfirm/wp-content/uploads/2021/11/h3-team2-av-260x260.jpg'); background-size: cover; background-position: top, center; background-repeat: no-repeat;">
+                                <div class="overlay"></div>
+                                <div class="item--holder-inner">
+                                    <div class="item--desc">Lead the team of passionate developers, designers, and
+                                        strategists
+                                        with a thought.</div>
+                                    <h4 class="item--title"><a
+                                            href="https://demo.casethemes.net/itfirm/team-details/">Chanda
+                                            Lewis</a></h4>
+                                    <div class="item--position">Web Developer</div>
+                                    <div class="item--social">
+                                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary"
+                                            style="background-color: #fff; color: black;">Read More +</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="initial-view">
+                                <img src="https://demo.casethemes.net/itfirm/wp-content/uploads/2021/11/h3-team3-av-260x260.jpg"
+                                    class="card-img-top" alt="Sandra R. Komar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sandra R. Komar</h5>
+                                    <p class="card-text">Web Developer</p>
+                                    <a class="item--details"
+                                        href="https://demo.casethemes.net/itfirm/team-details/">+</a>
+                                </div>
+                            </div>
+                            <div class="detailed-view"
+                                style="background-image: url('https://demo.casethemes.net/itfirm/wp-content/uploads/2021/11/h3-team3.jpg'); background-size: cover;">
+                                <div class="overlay"></div>
+                                <div class="item--holder-inner">
+                                    <div class="item--desc">Lead the team of passionate developers, designers, and
+                                        strategists
+                                        with a thought.</div>
+                                    <h4 class="item--title"><a
+                                            href="https://demo.casethemes.net/itfirm/team-details/">Sandra
+                                            R. Komar</a></h4>
+                                    <div class="item--position">Web Developer</div>
+                                    <div class="item--social">
+                                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary"
+                                            style="background-color: #fff; color: black;">Read More +</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="initial-view">
+                                <img src="https://demo.casethemes.net/itfirm/wp-content/uploads/2021/11/h3-team4-av-260x260.jpg"
+                                    class="card-img-top" alt="Jeffrey K. May">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jeffrey K. May</h5>
+                                    <p class="card-text">Web Developer</p>
+                                    <a class="item--details"
+                                        href="https://demo.casethemes.net/itfirm/team-details/">+</a>
+                                </div>
+                            </div>
+                            <div class="detailed-view"
+                                style="background-image: url('https://demo.casethemes.net/itfirm/wp-content/uploads/2021/11/h3-team4.jpg'); background-size: cover;">
+                                <div class="overlay"></div>
+                                <div class="item--holder-inner">
+                                    <div class="item--desc">Lead the team of passionate developers, designers, and
+                                        strategists
+                                        with a thought.</div>
+                                    <h4 class="item--title"><a
+                                            href="https://demo.casethemes.net/itfirm/team-details/">Jeffrey
+                                            K. May</a></h4>
+                                    <div class="item--position">Web Developer</div>
+                                    <div class="item--social">
+                                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary"
+                                            style="background-color: #fff; color: black;">Read More +</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-        </div>
-        <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseThree" aria-expanded="false"
-                aria-controls="flush-collapseThree">
-            Accordion Item #3
-            </button>
-        </h2>
-        <div id="flush-collapseThree" class="accordion-collapse collapse"
-            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended
-                to demonstrate the <code>.accordion-flush</code> class. This is the third item's
-                accordion body. Nothing more exciting happening here
-                in terms of content, but just filling up the space to make it look, at least at
-                first glance, a bit more representative of how this would look in a real-world
-                application.
+        </section>
+        <!-- tem member section end -->
+        <!-- one start -->
+        <section class="fluid-one">
+            <div class="outer-container d-flex align-items-center">
+                <!-- Content Column -->
+                <div class="fluid-one_content-column">
+                    <div class="fluid-one_column-inner">
+                        <!-- Image Blocks -->
+                        <div class="row border-row">
+                            <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
+                                <div class="service-block_two-inner">
+                                    <div class="service-block_two-image">
+                                        <img src="https://ascentaverse.com/assets/images/partners/h3-client1.png"
+                                            alt="Partner 1" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
+                                <div class="service-block_two-inner">
+                                    <div class="service-block_two-image">
+                                        <img src="https://ascentaverse.com/assets/images/partners/h3-client2.png"
+                                            alt="Partner 2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
+                                <div class="service-block_two-inner">
+                                    <div class="service-block_two-image">
+                                        <img src="https://ascentaverse.com/assets/images/partners/h3-client3.png"
+                                            alt="Partner 3" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border-row">
+                            <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
+                                <div class="service-block_two-inner">
+                                    <div class="service-block_two-image">
+                                        <img src="https://ascentaverse.com/assets/images/partners/h3-client4.png"
+                                            alt="Partner 4" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
+                                <div class="service-block_two-inner">
+                                    <div class="service-block_two-image">
+                                        <img src="https://ascentaverse.com/assets/images/partners/h3-client5.png"
+                                            alt="Partner 5" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
+                                <div class="service-block_two-inner">
+                                    <div class="service-block_two-image">
+                                        <img src="https://ascentaverse.com/assets/images/partners/h3-client6.png"
+                                            alt="Partner 6" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Column -->
+                <div class="fluid-one_content-column">
+                    <div class="fluid-one_column-inner">
+                        <div class="sec-title">
+                            <div class="sec-title_title">Our Partners</div>
+                            <h2 class="sec-title_heading">Long Time Project, with <br> <span class='theme_color'>Our
+                                    Best Partner</span> <br></h2>
+                            <div class="sec-title_text">We’ve been lucky to collaborate with a long list of customers,
+                                located in and out of the country. Thanks to them we have grown as professionals</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-    </div> --}}
+        </section>
+        <!-- one end -->
+
+        <section class="fluid-one">
+            <div class="faq-title">
+                <div class="faq-subheading">FAQs</div>
+                <h2 class="faq-heading">Frequently Asked Questions</h2>
+            </div>
+            <div class="outer-container d-flex align-items-center">
+                <!-- FAQ Column -->
+                <div class="faq-column">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Accordion Item #2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Accordion Item #3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Accordion Item #4
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the fourth item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Accordion Item #5
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the fifth item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partners Column -->
+                <div class="fluid-one_content-column">
+                    <div class="fluid-one_column-inner">
+                        <div class="sec-title">
+                            <div class="sec-title_title">Our Partners</div>
+                            <h2 class="sec-title_heading">Long Time Project, with <br> <span class='theme_color'>Our
+                                    Best Partner</span> <br></h2>
+                            <div class="sec-title_text">We’ve been lucky to collaborate with a long list of customers,
+                                located in and out of the country. Thanks to them we have grown as professionals.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 @endsection
 @section('javaScricpt')
     <script src="{{asset('assets/js/slide-show.js')}}"></script>

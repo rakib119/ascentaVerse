@@ -10,7 +10,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-$sectionIdArray = array( 1=>'Home Sec 1 left',2=>'Home Sec 1 Right(Banner)',3=>'Home Sec 2(About)',4=>'Home Sec 4 Left',5=>'Home Sec 4 Right');
+$sectionIdArray = array( 1=>'Home Sec 1 left',2=>'Home Sec 1 Right(Banner)',3=>'Home Sec 2(About)',4=>'Home Sec 3 Right',5=>'Home Sec 3 Left');
 Auth::routes();
 
 Route::controller(HomeController::class)->group(function(){
@@ -37,7 +37,7 @@ Route::resource('homeS2', hs2Controller::class)->only(['index','store','update']
 Route::post('homeS2/published',[hs2Controller::class, 'published'])->name('homeS2.publish');
 
 Route::resource('homeS3Left', hs3LeftController::class)->only(['index','store','edit','update','destroy']);
-Route::post('homeS3Left/published',[hs3LeftController::class, 'published'])->name('homeS1Right.publish');
+Route::post('homeS3Left/published',[hs3LeftController::class, 'published'])->name('homeS3Left.publish');
 
 Route::resource('homeS3Right', hs3RightController::class)->only(['index','store','update']);
 Route::post('homeS3Right/published',[hs3RightController::class, 'published'])->name('homeS3Right.publish');
