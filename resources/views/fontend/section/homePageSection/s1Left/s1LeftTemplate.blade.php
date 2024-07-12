@@ -14,7 +14,7 @@
                 <a class="btn-style-five theme-btn btn-item" href="{{$data->link1}}">
                     <div class="btn-wrap">
                         <span class="text-one">{{$data->btn1}}<i class="fa-solid fa-plus"></i></span>
-                        <span class="text-two">{{$data->btn2}}<i class="fa-solid fa-plus"></i></span>
+                        <span class="text-two">{{$data->btn1}}<i class="fa-solid fa-plus"></i></span>
                     </div>
                 </a>
             </div>

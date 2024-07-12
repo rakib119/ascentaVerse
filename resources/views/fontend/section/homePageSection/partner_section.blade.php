@@ -2,17 +2,32 @@
     <div class="outer-container d-flex align-items-center">
         <!-- Content Column -->
         <div class="fluid-one_content-column">
-            <div class="fluid-one_column-inner row">
+            <div class="fluid-one_column-inner">
                 <!-- Sec Title -->
-                @for ($i=1; $i<=6; $i++)
-                    <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
-                        <div class="service-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="service-block_two-image">
-                                <img src="{{asset("assets/images/partners/h3-client$i.png")}}" alt="{{asset("partn")}}" />
+                <div class="row border-row">
+                    @for ($i=1; $i<=3; $i++)
+                        <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
+                            <div class="service-block_two-inner">
+                                <div class="service-block_two-image">
+                                    <img src="{{asset("assets/images/partners/h3-client$i.png")}}"
+                                        alt="Partner {{$i}}" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endfor
+                    @endfor
+                </div>
+                <div class="row border-row">
+                    @for ($j=4; $j<=6; $j++)
+                        <div class="service-block_two col-lg-4 col-md-6 col-sm-12">
+                            <div class="service-block_two-inner">
+                                <div class="service-block_two-image">
+                                    <img src="{{asset("assets/images/partners/h3-client$j.png")}}"
+                                        alt="Partner {{$j}}" />
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+                </div>
             </div>
         </div>
         <!-- Content Column -->

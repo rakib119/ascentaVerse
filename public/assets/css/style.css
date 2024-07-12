@@ -1090,7 +1090,7 @@
 	box-shadow: 0 15px 55px rgba(138, 138, 138, .3);
 }
 
-/* .row {
+.row {
 	display: flex;
 }
 
@@ -1111,7 +1111,7 @@
 
 .border-row:last-child .service-block_two {
 	border-bottom: 1px solid #d7d2d2;
-} */
+}
 
 .service-block_two:nth-child(3n) {
 	border-right: none;
@@ -9053,7 +9053,7 @@
 .team-section {
 	margin: 50px auto;
 	margin-bottom: 100px;
-	width: 80%;
+	/* width: 80%; */
 }
 
 
@@ -9195,7 +9195,7 @@
 	bottom: 0;
 	background-image: linear-gradient(90deg, #2439FF 0%, #9F49E1 50%, #2439FF 100%);
 	background-position: 100% 0;
-	opacity: .5;
+	opacity: .7;
 }
 
 .item--holder-inner {
@@ -9250,10 +9250,9 @@
 
 /* Custom CSS for team section end */
 
-/* md saiful islam rafel */
 /* Custom CSS for services and card-header-section start */
 .services-card-section {
-	width: 80%;
+	/* width: 80%; */
 	margin: auto;
 }
 
@@ -9432,12 +9431,12 @@
 	line-height: 48px;
 }
 
-div#accordionExample {
+.faq-column> div#accordionExample {
 	width: 80%;
 	margin-left: 15%;
 }
 
-.outer-container {
+.faq-column> .outer-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
