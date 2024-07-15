@@ -41,12 +41,12 @@
                                     @endif
                                     <form action="{{ route('homeS3Left.store') }}" method="post" enctype="multipart/form-data">
                                         @csrf
-                                        <input type="hidden" name="section_id" value="2">{{-- Section Id 2 --}}
+                                        <input type="hidden" name="section_id" value="5">{{-- Section Id 2 --}}
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="image_name"> Image
-                                                        <span class="text-danger">*</span></label>
+                                                        <span class="text-danger">* (w=140px, h:40px)</span></label>
                                                     <input id="image_name" type="file"  class="form-control"
                                                         value="{{ old('image_name')  }}" name="image_name"
                                                         placeholder="Enter Image"  accept="jpg,jpeg" autofocus>
@@ -97,10 +97,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($banners as $v)
+                                        @foreach ($photos as $v)
                                             <tr>
                                                 <td>{{$loop->index+1}}</td>
-                                                <td> <img src="{{asset('assets/images/banners/'.$v->image_name)}}" width="60" alt=""></td>
+                                                <td> <img src="{{asset('assets/images/partners/'.$v->image_name)}}" width="144" alt=""></td>
                                                 <td> <span class="badge bg-{{ $v->status_active==1 ? 'info' : 'danger' }}">{{ $v->status_active==1 ? 'Active' : 'Inactive' }}</span></td>
                                                 <td >
                                                     <!-- Example single danger button -->

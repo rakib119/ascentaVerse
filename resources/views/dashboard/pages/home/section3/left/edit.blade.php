@@ -11,7 +11,7 @@
                          <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">DashBoard</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Home Management</a></li>
-                            <li class="breadcrumb-item active">Right Section(1)</li>
+                            <li class="breadcrumb-item active">left Section(3)</li>
                         </ol>
                      </div>
                  </div>
@@ -26,22 +26,22 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                        <h2 class=" mb-4">Update Banner Photo</h2>
+                                        <h2 class=" mb-4">Update Partners logo</h2>
                                     </div>
                                 </div>
                                 <div class="form py-3">
                                     @if (session('error'))
                                         <h4 class="text-danger">Error: {{ session('error') }} ** </h4>
                                     @endif
-                                    <form action="{{ route('homeS1Right.update',$banner->id) }}" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('homeS3Left.update',$banner->id) }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         @method('put')
-                                        <input type="hidden" name="section_id" value="2">
+                                        <input type="hidden" name="section_id" value="5">
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="image_name"> Image
-                                                        <span class="text-danger">*</span>
+                                                        <span class="text-danger">*(w=140px, h:40px)</span>
                                                         <span class="ml-5">
                                                             <img id="imgOutput" height="80" src="{{asset('assets/images/banners/'.$banner->image_name)}}">
                                                         </span>

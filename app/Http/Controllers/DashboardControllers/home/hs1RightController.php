@@ -7,10 +7,7 @@ use App\Models\Banner;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
 
 class hs1RightController extends Controller
 {
@@ -33,24 +30,21 @@ class hs1RightController extends Controller
             $request->validate([
                 'image_name'=>'required|mimes:png,jpg'
             ]);
-            if ($request->hasFile('image_name')) {
-                $manager = new ImageManager(new Driver());
-                $image_file = $request->file('image_name');
-                $image_name = Str::random(15).'.'.$image_file->getClientOriginalExtension();
-                $image = $manager->read($image_file);
-                // $image = $image->resize(300,300);
 
-                $path = base_path('public/assets/images/banners/' . $image_name);
-                $image->save($path);
+            $msg_str = uploadImage('public/assets/images/banners/',$request,'image_name'); //Custom Helpers
+            $msgArr = explode('*',$msg_str);
+
+            if($msgArr[0] == 1){
+                Banner::insert([
+                    'image_name'=>$msgArr[1],
+                    'section_id'=>2,
+                    'status_active'=>1,
+                    'created_at'=>Carbon::now(),
+                ]);
+                return back()->with('success','Added successfully');
+            }else{
+                return back()->with('error',$msg_str);
             }
-
-            Banner::insert([
-                'image_name'=>$image_name,
-                'section_id'=>2,
-                'status_active'=>1,
-                'created_at'=>Carbon::now(),
-            ]);
-            return back()->with('success','Added successfully');
         }
         catch(Exception $e)
         {
@@ -80,6 +74,11 @@ class hs1RightController extends Controller
 
              // Write the rendered content to the Blade view file
              file_put_contents($path, $content);
+
+             $msg = deleteFile(2); //Custom helpers
+             if($msg!=1){
+                return back()->with('error',$msg);
+             }
              return back()->with('success','Published Successfully');
          }
          catch(Exception $e)
@@ -97,22 +96,25 @@ class hs1RightController extends Controller
                 'image_name'=>'required|mimes:png,jpg'
             ]);
             $banner = Banner::findOrFail($id);
-            if ($request->hasFile('image_name')) {
-                $manager = new ImageManager(new Driver());
-                $image_file = $request->file('image_name');
-                $image_name = Str::random(15).'.'.$image_file->getClientOriginalExtension();
-                $image = $manager->read($image_file);
-                // $image = $image->resize(300,300);
 
-                $path = base_path('public/assets/images/banners/' . $image_name);
-                $image->save($path);
-                $file_location = base_path('public/assets/images/banners/' .  $banner->image_name);
-                // unlink($file_location);
+            $msg_str = uploadImage('public/assets/images/banners/',$request,'image_name'); //Custom Helpers
+            $msgArr = explode('*',$msg_str);
+            if($msgArr[0] == 1){
+                $image_name = $msgArr[1];
+                $path = base_path('public/assets/images/banners/' . $banner->image_name);
+
+                $msg = insertDeleteLink($path,2); // Custom Function
+                if ($msg!=1)
+                {
+                    return back()->with('error',$msg);
+                }
+                $banner->image_name= $image_name;
+                $banner->updated_by= auth()->id();
+                $banner->save();
+                return redirect()->route('homeS1Right.index')->with('success','Updated successfully');
+            }else{
+                return back()->with('error',$msg_str);
             }
-
-            $banner->image_name= $image_name;
-            $banner->save();
-            return redirect()->route('homeS1Right.index')->with('success','Updated successfully');
         }
         catch(Exception $e)
         {
@@ -120,7 +122,16 @@ class hs1RightController extends Controller
         }
     }
     public function destroy(Request $request, string $id){
-        Banner::findOrFail($id)->delete();
+        $banner         = Banner::findOrFail($id);
+        $file_location  = base_path('public/assets/images/banners/' .  $banner->image_name);
+
+        $msg = insertDeleteLink($file_location,2); //Custom Helpers
+        if ($msg!=1)
+        {
+            return back()->with('error',$msg);
+        }
+        $banner->delete();
+
         return back()->with('success','Deleted successfully');
     }
 

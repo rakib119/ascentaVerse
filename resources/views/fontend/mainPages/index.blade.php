@@ -349,73 +349,6 @@
         </section>
         <!-- team member section end -->
 
-        <section class="testimonial-two">
-            <div class="testimonial-two_pattern" data-parallax='{"y" : 60}' style="background-image:url({{asset('assets/images/background/pattern-44.png')}})"></div>
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <!-- Carousel Column -->
-                    <div class="testimonial-two_carousel-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="testimonial-two_carousel-inner">
-                            <!-- Sec Title Three -->
-                            <div class="sec-title_three">
-                                <div class="sec-title_three-title mt-3">Testimonials</div>
-                                <h2 class="sec-title_three-heading">We have many good <br> <span>client’s</span> review</h2>
-                            </div>
-                            <div class="single-item-carousel owl-carousel owl-theme">
-
-                                <!-- Testimonial Block Two -->
-                                <div class="testimonial-block_two">
-                                    <div class="testimonial-block_two-inner">
-                                        <span class="testimonial-block_two-quote"><img src="{{asset('assets/images/icons/quote.png')}} " alt="" /></span>
-                                        <div class="testimonial-block_two-author">
-                                            <img src="{{asset('assets/images/resource/author-10.jpg')}} " alt="" />
-                                        </div>
-                                        <div class="testimonial-block_two-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua.</div>
-                                        <div class="testimonial-block_two-author-name">Arnold Burner</div>
-                                        <div class="testimonial-block_two-designation">Senior Developer</div>
-                                    </div>
-                                </div>
-
-                                <!-- Testimonial Block Two -->
-                                <div class="testimonial-block_two">
-                                    <div class="testimonial-block_two-inner">
-                                        <span class="testimonial-block_two-quote"><img src="{{asset('assets/images/icons/quote.png')}} " alt="" /></span>
-                                        <div class="testimonial-block_two-author">
-                                            <img src="{{asset('assets/images/resource/author-10.jpg')}} " alt="" />
-                                        </div>
-                                        <div class="testimonial-block_two-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua.</div>
-                                        <div class="testimonial-block_two-author-name">Arnold Burner</div>
-                                        <div class="testimonial-block_two-designation">Senior Developer</div>
-                                    </div>
-                                </div>
-
-                                <!-- Testimonial Block Two -->
-                                <div class="testimonial-block_two">
-                                    <div class="testimonial-block_two-inner">
-                                        <span class="testimonial-block_two-quote"><img src="{{asset('assets/images/icons/quote.png')}} " alt="" /></span>
-                                        <div class="testimonial-block_two-author">
-                                            <img src="{{asset('assets/images/resource/author-10.jpg')}}" alt="" />
-                                        </div>
-                                        <div class="testimonial-block_two-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua.</div>
-                                        <div class="testimonial-block_two-author-name">Arnold Burner</div>
-                                        <div class="testimonial-block_two-designation">Senior Developer</div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Image Column -->
-                    <div class="testimonial-two_image-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="testimonial-two_image-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="testimonial-two_image">
-                                <img src="{{asset('assets/images/resource/testimonial-1.png')}} " alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section class="news-two">
             <div class="auto-container">
@@ -461,7 +394,7 @@
             </div>
         </section>
         <!-- Testimonial Section -->
-        <section class="testimonial-section" style="background-image: url({{ asset('assets/images/background/5.jpg')}})">
+        <section class="testimonial-section"  >
             <div class="pattern-layer-one" style="background-image: url({{ asset('assets/images/background/pattern-25.png')}}"></div>
             <div class="auto-container">
                 <div class="row clearfix">
