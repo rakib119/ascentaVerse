@@ -223,14 +223,15 @@ class hs4Controller extends Controller
             $all_data = ['services'=> $services,'data'=> $SingleSection];
             // return  $data;
             $content = View::make('fontend.section.homePageSection.s4.s4Template',$all_data)->render();
-            $content = View::make('fontend.section.services.serviceTemplate',$all_data)->render();
+            $content1 = View::make('fontend.section.services.serviceTemplate',$all_data)->render();
 
             // Path to the new static Blade view file
             $path = resource_path('views/fontend/section/homePageSection/s4/service.blade.php');
-            $path = resource_path('views/fontend/section/services/all_service.blade.php');
+            $path1 = resource_path('views/fontend/section/services/all_service.blade.php');
 
             // Write the rendered content to the Blade view file
             file_put_contents($path, $content);
+            file_put_contents($path1, $content1);
 
             $msg = deleteFile(6); //Custom helpers
             if($msg!=1){

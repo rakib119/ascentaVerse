@@ -1,4 +1,4 @@
-<section class="team-section">
+<section class="team-section" id="teams">
     <div class="team-heading py-5">
         <div class="sub-title ">Team Member</div>
                 <div class="title mt-3">
@@ -6,8 +6,8 @@
         </div>
     </div>
     <div class="container mx-auto mt-4 tem">
-        <div class="team-carousel owl-carousel owl-theme justify-content-center">
-                                            <div class="member px-3">
+        <div class="row row-cols-1 row-cols-md-4 g-4 d-flex flex-row flex-wrap justify-content-center">
+                            <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
                             <img src="http://127.0.0.1:8000/assets/images/teams/3s14stYHfu3pRzr.jpg"
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                                            <div class="member px-3">
+                            <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
                             <img src="http://127.0.0.1:8000/assets/images/teams/UW1C4tlDPXnM9Ju.jpg"
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-                                            <div class="member px-3">
+                            <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
                             <img src="http://127.0.0.1:8000/assets/images/teams/VunNZmtYoZ6acUR.jpg"
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-                                            <div class="member px-3">
+                            <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
                             <img src="http://127.0.0.1:8000/assets/images/teams/j8u9lJUbNv2jcu7.jpg"
@@ -140,9 +140,5 @@
                     </div>
                 </div>
                     </div>
-    </div>
-    <div class="text-center service-btn">
-        <a href="http://127.0.0.1:8000/about#teams" class="btn btn-primary">All Team Members <i
-                class="fas fa-plus"></i></a>
     </div>
 </section>

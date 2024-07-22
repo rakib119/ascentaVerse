@@ -11,6 +11,9 @@
     <div class="container mx-auto mt-4 tem">
         <div class="team-carousel owl-carousel owl-theme justify-content-center">
             @foreach ($teams as $v)
+                @php
+                    if ($v->is_displayed_in_home !=1) {continue;}
+                @endphp
                 <div class="member px-3">
                     <div class="card">
                         <div class="initial-view">
@@ -48,7 +51,7 @@
         </div>
     </div>
     <div class="text-center service-btn">
-        <a href="{{route('teams')}}" class="btn btn-primary">{{$data->btn1}} <i
+        <a href="{{route('about')}}#teams" class="btn btn-primary">{{$data->btn1}} <i
                 class="fas fa-plus"></i></a>
     </div>
 </section>

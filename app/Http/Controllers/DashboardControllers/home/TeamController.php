@@ -236,7 +236,7 @@ class TeamController extends Controller
     {
         try
         {
-            $teams = Team::where(['section_id'=>8,'is_displayed_in_home'=>'1'])->get();
+            $teams = Team::where(['section_id'=>8])->get();
             // return returnArray('social_icons','id,icon','id','icon');
 
             $no_of_teams = $teams->count();
@@ -249,7 +249,7 @@ class TeamController extends Controller
 
             $no_of_data = $SingleSection->count();
             if ($no_of_data<1 ) {
-                return back()->with('error','Please enter data for published');
+                return back()->with('error','Please enter section data for published');
             }
             $icons = SocialIcon::all();
             $iconArray = array();
@@ -260,12 +260,15 @@ class TeamController extends Controller
             // return  $iconArray;
             $all_data = ['teams'=> $teams,'data'=> $SingleSection,'iconArray'=> $iconArray];
             $content = View::make('fontend.section.homePageSection.team.teamTemplate',$all_data)->render();
+            $content1 = View::make('fontend.section.about.teamTemplate',$all_data)->render();
 
             // Path to the new static Blade view file
             $path = resource_path('views/fontend/section/homePageSection/team/team.blade.php');
+            $path1 = resource_path('views/fontend/section/about/all_team.blade.php');
 
             // Write the rendered content to the Blade view file
             file_put_contents($path, $content);
+            file_put_contents($path1, $content1);
 
             $msg = deleteFile(8); //Custom helpers
             if($msg!=1){
