@@ -207,7 +207,7 @@ class hs4Controller extends Controller
     {
         try
         {
-            $services = Service::where(['section_id'=>6,'is_displayed_in_home'=>'1'])->get();
+            $services = Service::where(['section_id'=>6])->get();
 
             $no_of_services = $services->count();
             if ($no_of_services<4 ) {
@@ -223,9 +223,11 @@ class hs4Controller extends Controller
             $all_data = ['services'=> $services,'data'=> $SingleSection];
             // return  $data;
             $content = View::make('fontend.section.homePageSection.s4.s4Template',$all_data)->render();
+            $content = View::make('fontend.section.services.serviceTemplate',$all_data)->render();
 
             // Path to the new static Blade view file
             $path = resource_path('views/fontend/section/homePageSection/s4/service.blade.php');
+            $path = resource_path('views/fontend/section/services/all_service.blade.php');
 
             // Write the rendered content to the Blade view file
             file_put_contents($path, $content);

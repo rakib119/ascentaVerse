@@ -1,5 +1,5 @@
 <section class="services-card-section">
-    <div class="container">
+    <div class="container pb-4">
         <!-- Header Section -->
         <div class="row">
             <div class="col-12">
@@ -18,13 +18,7 @@
         </div>
         <div class="row g-4">
             @foreach ($services as $v)
-                @php
-                    if ($v->is_displayed_in_home !=1) {continue;}
-                    if ($v->index+1 == 5) {
-                        break;
-                    }
-                @endphp
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3 mb-5">
                     <div class="card card-custom h-100">
                         <picture>
                             <img src="{{asset('assets/images/services/'.$v->thumbnail)}}" class="card-img-top mx-auto" alt="{{$v->title}}">
@@ -49,11 +43,6 @@
                     </div>
                 </div>
             @endforeach
-
-        </div>
-        <div class="text-center service-btn">
-            <a href="{{route('services')}}" class="btn btn-primary">{{$data->btn1}} <i
-                    class="fas fa-plus"></i></a>
         </div>
     </div>
 </section>
