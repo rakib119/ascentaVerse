@@ -26,12 +26,11 @@ class hs3LeftController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'image_name'=>'required|image|mimes:png|dimensions:width=144,height=40'
+        ]);
         try
         {
-            $request->validate([
-                'image_name'=>'required|image|mimes:png|dimensions:width=144,height=40'
-            ]);
-
             $msg_str = uploadImage('public/assets/images/partners/',$request,'image_name'); //Custom Helpers
             $msgArr = explode('*',$msg_str);
 
@@ -97,11 +96,11 @@ class hs3LeftController extends Controller
 
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'image_name'=>'required|image|mimes:png|dimensions:width=144,height=40'
+        ]);
         try
         {
-            $request->validate([
-                'image_name'=>'required|image|mimes:png|dimensions:width=144,height=40'
-            ]);
             $banner = Banner::findOrFail($id);
             $msg_str = uploadImage('public/assets/images/partners/',$request,'image_name'); //Custom Helpers
             $msgArr = explode('*',$msg_str);

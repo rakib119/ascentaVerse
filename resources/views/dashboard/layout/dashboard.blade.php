@@ -128,7 +128,7 @@ $home_link =  route('dashboard');
     <script src="{{ asset('dashboard/assets/js/pages/dashboard.init.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/app.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/custom.js') }}"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     {{-- delete confirmation --}}
     <script>
         function deleteData(id){

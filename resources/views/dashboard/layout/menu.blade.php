@@ -18,11 +18,12 @@
                 <li><a href="{{route('homeS2.index')}}"> Home S2 (About) </a></li>
                 <li><a href="{{route('homeS3Left.index')}}"> Home S3 Left(Partners) </a></li>
                 <li><a href="{{route('homeS3Right.index')}}"> Home S3 Right(Partners) </a></li>
+                <li><a href="{{route('homeS4.index')}}"> Home S4(Services) </a></li>
+                <li><a href="{{route('faq.index')}}"> Faq </a></li>
+                <li><a href="{{route('team.index')}}"> Team </a></li>
             </ul>
-            {{--<ul class="sub-menu" aria-expanded="false">
-                <li><a href="{{route('home_second_right.add')}}">After Slider Right Section </a></li>
-            </ul>
-            <ul class="sub-menu" aria-expanded="false">
+
+            {{--  <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{route('after_ccd.edit')}}">After CCD Section </a></li>
             </ul>
             <ul class="sub-menu" aria-expanded="false">
@@ -32,6 +33,16 @@
                 <li><a href="{{route('projects.index' )}}">Projects </a></li>
             </ul> --}}
         </li>
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="fas fa-project-diagram"></i>
+                <span>System</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{route('blog-category.index')}}">Blog Categories</a></li>
+            </ul>
+        </li>
+
         {{-- <li>
             <a href="{{route('users')}}" class=" waves-effect">
                 <i class="fa fa-users"> </i>

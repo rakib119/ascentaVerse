@@ -14,12 +14,15 @@ if (!function_exists('uploadImage')) {
             if ($request->hasFile($field_name))
             {
                 $manager = new ImageManager(new Driver());
-                $image_file = $request->file('image_name');
+                $image_file = $request->file($field_name);
                 $image_name = Str::random(15).'.'.$image_file->getClientOriginalExtension();
                 $image = $manager->read($image_file);
                 $path = base_path($basepath . $image_name);
                 $image->save($path);
                 return "1*".$image_name;
+            }
+            else{
+                return "1*0";
             }
         } catch (Exception $e)
         {
@@ -81,6 +84,21 @@ if (!function_exists('deleteFile')) {
             }
             changeStatus('delete_photo_links', $idArray,0);
             return 1;
+        } catch (Exception $e)
+        {
+            return $e->getMessage();
+        }
+
+
+    }
+}
+if (!function_exists('returnArray')) {
+    function returnArray($table_name,$columns,$key,$value, $cond='')
+    {
+        try {
+
+           return $data = DB::raw("select $columns form $table_name  $cond");
+
         } catch (Exception $e)
         {
             return $e->getMessage();

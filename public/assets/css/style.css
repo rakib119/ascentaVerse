@@ -9058,8 +9058,8 @@
 
 
 .tem img {
-	width: 120px;
-	height: 120px;
+	width: 120px!important;
+	height: 120px!important;
 	border-radius: 50%;
 	border: 3px solid #551FFF;
 	padding: 7px;
