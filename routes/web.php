@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\DashboardControllers\BlogCategoryController;
+use App\Http\Controllers\DashboardControllers\home\BlogController;
 use App\Http\Controllers\DashboardControllers\home\FaqController;
 use App\Http\Controllers\DashboardControllers\home\hs1LeftController;
 use App\Http\Controllers\DashboardControllers\home\hs1RightController;
@@ -14,7 +15,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-$sectionIdArray = array( 1=>'Home Sec 1 left',2=>'Home Sec 1 Right(Banner)',3=>'Home Sec 2(About)',4=>'Home Sec 3 Right',5=>'Home Sec 3 Left',6=>'Home Sec 4',7=>'Faq',8=>'Team');
+$sectionIdArray = array( 1=>'Home Sec 1 left',2=>'Home Sec 1 Right(Banner)',3=>'Home Sec 2(About)',4=>'Home Sec 3 Right',5=>'Home Sec 3 Left',6=>'Home Sec 4',7=>'Faq',8=>'Team',9=>'Blog');
 Auth::routes();
 
 Route::controller(HomeController::class)->group(function(){
@@ -25,6 +26,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/service/details/{slug}', 'services_details')->name('service.details');
     Route::get('/team/member/{slug}', 'services_details')->name('team_details');
     Route::get('/blogs', 'blogs')->name('blog');
+    Route::get('/blog/details/{slug}', 'blogs')->name('blog-details');
     Route::get('/kyc', 'kyc')->name('kyc');
     // Route::get('/admin', 'dashboard')->name('admin');
 });
@@ -66,4 +68,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('team/published',[TeamController::class, 'published'])->name('team.publish');
 
     Route::resource('blog-category', BlogCategoryController::class)->only('index','store','edit','update');
+
+    Route::resource('blog', BlogController::class);
+    Route::post('blog/title/store',[BlogController::class, 'title_store'])->name('blog.title_store');
+    Route::put('blog/title/update/{id}',[BlogController::class, 'title_update'])->name('blog.title_update');
+    Route::post('blog/published',[BlogController::class, 'published'])->name('blog.publish');
 });

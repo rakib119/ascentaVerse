@@ -9,6 +9,7 @@
     @include('fontend.section.homePageSection.s4.service')              {{-- Service Section --}}
     @include('fontend.section.homePageSection.s7Faq.faq')               {{-- Faq & Contact Section --}}
     @include('fontend.section.homePageSection.team.team')               {{-- Team Section --}}
+    @include('fontend.section.homePageSection.blog.blog')               {{-- Team Section --}}
 
 
        {{--
@@ -174,7 +175,7 @@
         --}}
 
 
-        <section class="news-two">
+        {{-- <section class="news-two">
             <div class="auto-container">
 
                 <!-- Sec Title -->
@@ -216,7 +217,7 @@
                 </div>
 
             </div>
-        </section>
+        </section> --}}
         <!-- Testimonial Section -->
         <section class="testimonial-section"  >
             <div class="pattern-layer-one" style="background-image: url({{ asset('assets/images/background/pattern-25.png')}}"></div>
