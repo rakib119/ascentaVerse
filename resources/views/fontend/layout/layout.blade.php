@@ -142,13 +142,27 @@
 
 						<div class="outer-box d-flex align-items-center">
 							<!-- Button Box -->
+
 							<div class="button-box">
-								<a class="btn-style-two theme-btn btn-item" href="{{route('login')}}">
-									<div class="btn-wrap">
-										<span class="text-one">Login<i class="fas fa-sign-in-alt"></i></span>
-										<span class="text-two">Login<i class="fas fa-sign-in-alt"></i></span>
-									</div>
-								</a>
+                                @auth
+                                    <a class="btn-style-two theme-btn btn-item"  href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Logout<i class="fas fa-sign-in-alt"></i></span>
+                                            <span class="text-two">Logout<i class="fas fa-sign-in-alt"></i></span>
+                                        </div>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                @else
+                                    <a class="btn-style-two theme-btn btn-item" href="{{route('login')}}">
+                                        <div class="btn-wrap">
+                                            <span class="text-one">Login<i class="fas fa-sign-in-alt"></i></span>
+                                            <span class="text-two">Login<i class="fas fa-sign-in-alt"></i></span>
+                                        </div>
+                                    </a>
+                                @endauth
 							</div>
 
 							<!-- Mobile Navigation Toggler -->
@@ -199,7 +213,6 @@
 										<a href="{{ route('home') }}"><img src="{{asset('assets/images/footer-logo.png')}}" alt="" /></a>
 									</div>
 									<div class="text">We work with a passion of taking challenges and creating new ones in advertising sector.</div>
-									<a href="#" class="theme-btn about-btn">About us</a>
 								</div>
 							</div>
 
@@ -246,23 +259,7 @@
 							<!-- Footer Column -->
 							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
 								<div class="footer-widget instagram-widget">
-									<h4>Open Hours:</h4>
-									<div class="widget-content">
-										<div class="images-outer clearfix">
-											<!--Image Box-->
-											<figure class="image-box"><a class="lightbox-image" href="{{asset('assets/images/gallery/project-1.jpg')}}"><img src="{{asset('assets/images/gallery/footer-gallery-thumb-1.jpg')}}" alt=""></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a class="lightbox-image" href="{{asset('assets/images/gallery/project-2.jpg')}}"><img src="{{asset('assets/images/gallery/footer-gallery-thumb-2.jpg')}}" alt=""></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a class="lightbox-image" href="{{asset('assets/images/gallery/project-3.jpg')}}"><img src="{{asset('assets/images/gallery/footer-gallery-thumb-3.jpg')}}" alt=""></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a class="lightbox-image" href="{{asset('assets/images/gallery/project-4.jpg')}}"><img src="{{asset('assets/images/gallery/footer-gallery-thumb-4.jpg')}}" alt=""></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a class="lightbox-image" href="{{asset('assets/images/gallery/project-5.jpg')}}"><img src="{{asset('assets/images/gallery/footer-gallery-thumb-5.jpg')}}" alt=""></a></figure>
-											<!--Image Box-->
-											<figure class="image-box"><a class="lightbox-image" href="{{asset('assets/images/gallery/project-6.jpg')}}"><img src="{{asset('assets/images/gallery/footer-gallery-thumb-6.jpg')}}" alt=""></a></figure>
-										</div>
-									</div>
+									<h4>Important Links:</h4>
 								</div>
 							</div>
 

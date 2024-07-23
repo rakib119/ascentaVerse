@@ -22,6 +22,7 @@
                 <li><a href="{{route('faq.index')}}"> Faq </a></li>
                 <li><a href="{{route('team.index')}}"> Team </a></li>
                 <li><a href="{{route('blog.index')}}"> Blog </a></li>
+                <li><a href="{{route('testimonial.index')}}"> Testimonial </a></li>
             </ul>
 
             {{--  <ul class="sub-menu" aria-expanded="false">
