@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardControllers\home\hs3RightController;
 use App\Http\Controllers\DashboardControllers\home\hs4Controller;
 use App\Http\Controllers\DashboardControllers\home\TeamController;
 use App\Http\Controllers\DashboardControllers\home\TestimonialController;
+use App\Http\Controllers\DashboardControllers\InfoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -87,4 +88,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('testimonial/title/store',[TestimonialController::class, 'title_store'])->name('testimonial.title_store');
     Route::put('testimonial/title/update/{id}',[TestimonialController::class, 'title_update'])->name('testimonial.title_update');
     Route::post('testimonial/published',[TestimonialController::class, 'published'])->name('testimonial.publish');
+
+    //Settings
+    Route::resource('info-setup', InfoController::class)->only('index','edit','update');
+
 });

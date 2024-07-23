@@ -41,6 +41,9 @@
                 <span>System</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{route('info-setup.index')}}">Information Setup</a></li>
+            </ul>
+            <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{route('blog-category.index')}}">Blog Categories</a></li>
             </ul>
         </li>

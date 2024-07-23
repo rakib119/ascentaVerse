@@ -260,6 +260,12 @@
 							<div class="footer-column col-lg-6 col-md-6 col-sm-12">
 								<div class="footer-widget instagram-widget">
 									<h4>Important Links:</h4>
+                                    <ul class="contact-list">
+										<li><a href="www.ascentaverse.com/about">About</a></li>
+										<li><a href="www.ascentaverse.com/about">About</a></li>
+										<li><a href="www.ascentaverse.com/about">About</a></li>
+										<li><a href="www.ascentaverse.com/about">About</a></li>
+									</ul>
 								</div>
 							</div>
 
