@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\BackendController;
-use App\Http\Controllers\DashboardController\home\TestimonialController;
 use App\Http\Controllers\DashboardControllers\BlogCategoryController;
 use App\Http\Controllers\DashboardControllers\home\BlogController;
 use App\Http\Controllers\DashboardControllers\home\FaqController;
@@ -12,6 +11,7 @@ use App\Http\Controllers\DashboardControllers\home\hs3LeftController;
 use App\Http\Controllers\DashboardControllers\home\hs3RightController;
 use App\Http\Controllers\DashboardControllers\home\hs4Controller;
 use App\Http\Controllers\DashboardControllers\home\TeamController;
+use App\Http\Controllers\DashboardControllers\home\TestimonialController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;

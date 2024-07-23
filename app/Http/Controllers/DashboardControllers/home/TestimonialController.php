@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\DashboardController\home;
+namespace App\Http\Controllers\DashboardControllers\home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Testimonial;
