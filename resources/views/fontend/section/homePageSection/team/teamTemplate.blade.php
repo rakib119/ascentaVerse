@@ -1,5 +1,5 @@
-<section class="team-section">
-    <div class="team-heading py-5">
+<section class="team-section" style="margin-bottom:0px !important;">
+    <div class="team-heading pb-5">
         <div class="sub-title ">{{$data->lebel}}</div>
         @php
             $title = preg_replace('/\*\*(.*?)\*\*/', "<span class='highlight'>$1</span>", $data->title);

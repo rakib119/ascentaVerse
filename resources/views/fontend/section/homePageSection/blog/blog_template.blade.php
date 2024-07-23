@@ -1,7 +1,7 @@
 <section class="news-two">
     <div class="auto-container">
 
-        <div class="team-heading py-5">
+        <div class="team-heading pb-5">
             <div class="sub-title ">{{$data->lebel}}</div>
             @php
                 $title = preg_replace('/\*\*(.*?)\*\*/', "<span class='highlight'>$1</span>", $data->title);

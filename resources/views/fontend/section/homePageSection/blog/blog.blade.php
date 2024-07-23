@@ -1,7 +1,7 @@
 <section class="news-two">
     <div class="auto-container">
 
-        <div class="team-heading py-5">
+        <div class="team-heading pb-5">
             <div class="sub-title ">Blog</div>
                         <div class="title mt-3">
                 Our Latest <span class='highlight'>Blog</span>

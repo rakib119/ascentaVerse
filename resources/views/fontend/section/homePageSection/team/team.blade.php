@@ -1,5 +1,5 @@
-<section class="team-section">
-    <div class="team-heading py-5">
+<section class="team-section" style="margin-bottom:0px !important;">
+    <div class="team-heading pb-5">
         <div class="sub-title ">Team Member</div>
                 <div class="title mt-3">
             Our Awesome <span class='highlight'>Technology</span> Team Member
