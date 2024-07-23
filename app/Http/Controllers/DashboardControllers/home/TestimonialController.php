@@ -8,7 +8,6 @@ use App\Models\SingleSection;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;
 
 class TestimonialController extends Controller

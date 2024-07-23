@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('genarel_infos', function (Blueprint $table) {
             $table->id();
             $table->string('field_name',30);
-            $table->text('value');
+            $table->text('value')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

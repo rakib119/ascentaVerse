@@ -1,7 +1,7 @@
 @extends('fontend.layout.layout')
 @section('mainContent')
     <!-- Page Title -->
-    <section class="page-title" style="background-image:url({{asset("assets/images/background/2.jpg")}})">
+    <section class="page-title" style="background-image:url({{asset('assets/images/info/'.$data->value)}})">
         <div class="auto-container">
             <h2>About us</h2>
             <ul class="bread-crumb clearfix">

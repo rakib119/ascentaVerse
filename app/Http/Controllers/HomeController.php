@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GenarelInfo;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,15 +29,18 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('fontend.mainPages.about');
+        $data = GenarelInfo::select('value')->where('field_name','about-background')->first();
+        return view('fontend.mainPages.about',compact('data'));
     }
     public function services()
     {
-        return view('fontend.mainPages.services');
+        $data = GenarelInfo::select('value')->where('field_name','service-background')->first();
+        return view('fontend.mainPages.services',compact('data'));
     }
     public function blogs()
     {
-        return view('fontend.mainPages.blogs');
+        $data = GenarelInfo::select('value')->where('field_name','blog-background')->first();
+        return view('fontend.mainPages.blogs',compact('data'));
     }
     public function kyc()
     {

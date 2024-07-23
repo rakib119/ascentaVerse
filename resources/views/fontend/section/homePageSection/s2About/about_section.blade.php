@@ -66,10 +66,10 @@
                         <img src="http://127.0.0.1:8000/assets/images/icons/circle-layer.png" alt="" />
                     </div>
                     <div class="about-one_image">
-                        <img src="http://127.0.0.1:8000/assets/images/about/zl128vOyUwz0Eel.jpg" alt="" />
+                        <img src="http://127.0.0.1:8000/assets/images/about/B0LDRkXzMAWwM8S.jpg" alt="" />
                     </div>
                     <div class="about-one_bold-text">About us</div>
-                    <div class="about-one_image-text">We are a certified IT Service company.111</div>
+                    <div class="about-one_image-text">We are a certified IT Service company.</div>
                 </div>
             </div>
         </div>

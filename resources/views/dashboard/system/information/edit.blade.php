@@ -30,30 +30,63 @@
                                     </div>
                                 </div>
                                 <div class="form py-3">
-                                    <form action="{{ route('genarel_info.update',$information->id) }}" enctype="multipart/form-data" method="post">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="value">Value
-                                                        <span class="text-danger">*</span></label>
-                                                    <input id="value" type="text" class="form-control"
-                                                        value="{{ $information->value }}" name="value" autofocus>
-                                                    @error('value')
-                                                        <h6 class="text-danger"> {{ $message }}</h6>
-                                                    @enderror
+                                    @php
+                                        $id = $information->id;
+                                    @endphp
+                                    @if ($id==1||$id==2||$id==3||$id==4||$id==5||$id==6)
+                                        <form action="{{ route('info-setup.photo-update',$id) }}" enctype="multipart/form-data" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="photo"> Photo <span class="text-danger">*(w={{$dimentions['w']}}px, h:{{$dimentions['h']}}px)</span> </label>
+                                                        <input id="photo" type="file"  class="form-control" name="photo" onchange="loadFile(event,'imgOutput')">
+                                                        @error('photo')
+                                                            <h6 class="text-danger"> {{ $message }}</h6>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="mb-3">
+                                                            <img id="imgOutput" src="{{ asset('assets/images/info/'.$information->value) }}" height="60">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12 mt-3">
-                                                <div class="mb-3">
-                                                    <button type="submit" class="btn btn-success">Update </button>
+                                            <div class="row">
+                                                <div class="col-lg-12 mt-3">
+                                                    <div class="mb-3">
+                                                        <button type="submit" class="btn btn-success">Update Photo</button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    @else
+                                        <form action="{{ route('info-setup.update',$id) }}" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="value">Value
+                                                            <span class="text-danger">*</span></label>
+                                                        <input id="value" type="text" class="form-control"
+                                                            value="{{ $information->value }}" name="value" autofocus>
+                                                        @error('value')
+                                                            <h6 class="text-danger"> {{ $message }}</h6>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 mt-3">
+                                                    <div class="mb-3">
+                                                        <button type="submit" class="btn btn-success">Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>

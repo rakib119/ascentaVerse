@@ -24,12 +24,21 @@
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">
-                                
+
                                 <div class="d-flex justify-content-between">
                                     <div>
                                         <h2 class=" mb-4">Information List</h2>
                                     </div>
+                                    <div class="float-end d-none d-sm-block">
+                                        <form action="{{route('info-setup.publish')}}" method="post">
+                                            @csrf
+                                            <button class="btn btn-warning" type="submit">Publish</button>
+                                        </form>
+                                    </div>
                                 </div>
+                                @if (session('error'))
+                                        <h4 class="text-danger">Error: {{ session('error') }} ** </h4>
+                                @endif
                                 <table id="myTable" class="table table-centered table-nowrap mb-0">
                                     <thead class="thead-light">
                                         <tr>
@@ -49,7 +58,7 @@
                                                         $img = [1,2,3,4,5,6];
                                                     @endphp
                                                     @if ($img[$loop->index]??0)
-                                                        <img src="{{$v->value}}" alt="{{$v->value}}" height="30">
+                                                        <img src="{{ asset('assets/images/info/'.$v->value) }}" alt="{{$v->value}}" height="30">
                                                     @else
                                                         {!! Str::substr($v->value, 0, 60) !!}
                                                     @endif

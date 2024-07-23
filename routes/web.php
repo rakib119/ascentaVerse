@@ -91,5 +91,7 @@ Route::middleware(['auth'])->group(function () {
 
     //Settings
     Route::resource('info-setup', InfoController::class)->only('index','edit','update');
+    Route::put('info-setup/photo/update/{id}',[InfoController::class, 'image_update'])->name('info-setup.photo-update');
+    Route::post('info-setup/published',[InfoController::class, 'published'])->name('info-setup.publish');
 
 });
