@@ -12,7 +12,7 @@
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget logo-widget">
                                 <div class="logo">
-                                    <a href="http://127.0.0.1:8000"> <picture><img src="http://127.0.0.1:8000/assets/images/info/logo_white.png" /></picture></a>
+                                    <a href="http://127.0.0.1:8000"> <picture><img src="http://127.0.0.1:8000/assets/images/info/Y1AnSkIY6TnEoIO.png" /></picture></a>
                                 </div>
                                 <div class="text">We work with a passion of taking challenges and creating new ones in advertising sector.</div>
                             </div>

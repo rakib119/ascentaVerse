@@ -110,10 +110,10 @@ class InfoController extends Controller
             file_put_contents($path1, $content1);
             file_put_contents($path2, $content2);
 
-            /* $msg = deleteFile(99); //Custom helpers
+            $msg = deleteFile(99); //Custom helpers
             if($msg!=1){
                 return back()->with('error',$msg);
-            } */
+            }
             return back()->with('success','Published Successfully');
         }
         catch(Exception $e)
