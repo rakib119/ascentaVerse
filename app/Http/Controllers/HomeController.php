@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BlogCategories;
 use App\Models\GenarelInfo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -45,5 +47,35 @@ class HomeController extends Controller
     public function kyc()
     {
         return view('fontend.mainPages.kyc');
+    }
+    public function blogs_details($slug)
+    {
+        $blogRes=DB::table('blog_categories','a')
+            ->join('blogs as b', 'a.id', '=', 'b.category_id')
+            ->select('a.id as cat_id', 'b.id as blog_id', 'a.name as cat_name','b.title','b.created_at','b.thumbnail','b.slug')
+            ->orderBy('b.created_at','desc')
+            ->get();
+        $categories = $blogs =array();
+        foreach ($blogRes as  $v)
+        {
+            //CATEGORIES ARRAY
+            if (!isset($categories[$v->cat_id]['total_blogs']))
+            {
+                $categories[$v->cat_id]['total_blogs'] = 0;
+            }
+
+            $categories[$v->cat_id]['cat_name']   = $v->cat_name;
+            $categories[$v->cat_id]['total_blogs']++;
+
+            //BLOG ARRAY
+            $blogs[$v->blog_id]['title']        = $v->title;
+            $blogs[$v->blog_id]['title']        = $v->title;
+            $blogs[$v->blog_id]['created_at']   = $v->created_at;
+            $blogs[$v->blog_id]['thumbnail']    = asset('assets/images/blogs/'.$v->thumbnail) ;
+            $blogs[$v->blog_id]['slug']         = $v->slug;
+        }
+        // return $blogs;
+        $data = GenarelInfo::select('value')->where('field_name','blog-background')->first();
+        return view('fontend.detailsPages.blog_details',compact('data','categories','blogs'));
     }
 }
