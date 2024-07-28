@@ -22,7 +22,7 @@
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget newsletter-widget">
                                 <h4>Newsletter</h4>
-                                <div class="text">Subscribe our newsletter to get our latest update &amp; news</div>
+                                <div class="text">Subscribe ourr newsletter to get our latest update &amp; news</div>
                                 <!-- Social Box -->
                                 <ul class="social-box">
                                     <li><a href="https://www.facebook.com/ascentaverse" class="fa-brands fa-facebook-f fa-fw"></a></li>

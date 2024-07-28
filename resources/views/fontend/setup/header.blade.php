@@ -1,6 +1,6 @@
 <!-- Main Header / Header Style Three -->
             <marquee direction="left" height="35px" width="100%" class="scroolbar" bgcolor="#23a592">
-            <p class="text-white" style="font-family: var(--font-family-FiraSans);line-height: 32px;">Coming soon! Our website is under construction and will be live shortly. We apologize for any inconvenience. Stay tuned for updates! </h4>
+            <p class="text-white" style="font-family: var(--font-family-FiraSans);line-height: 32px;">Coming soon!! Our website is under construction and will be live shortly. We apologize for any inconvenience. Stay tuned for updates!</h4>
         </marquee>
         <header class="main-header header-style-three">
         <!-- Header Upper -->
@@ -52,7 +52,7 @@
                                     </a>
                                     <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST"
                                         class="d-none">
-                                        <input type="hidden" name="_token" value="uoQ0zdgkaxCKzxzWOAhBZEX71JnWkLH4WpY1RhYt" autocomplete="off">                                    </form>
+                                        <input type="hidden" name="_token" value="mNqMGsdh1f90GrvE9BjfoCkRmDfPnv7AygmfinnJ" autocomplete="off">                                    </form>
                                     
                                                             </div>
 
@@ -96,7 +96,7 @@
                                     </a>
                                     <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST"
                                         class="d-none">
-                                        <input type="hidden" name="_token" value="uoQ0zdgkaxCKzxzWOAhBZEX71JnWkLH4WpY1RhYt" autocomplete="off">                                    </form>
+                                        <input type="hidden" name="_token" value="mNqMGsdh1f90GrvE9BjfoCkRmDfPnv7AygmfinnJ" autocomplete="off">                                    </form>
                                                             </div>
 
                             <!-- Mobile Navigation Toggler -->
