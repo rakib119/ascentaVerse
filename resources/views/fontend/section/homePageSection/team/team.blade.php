@@ -25,7 +25,7 @@
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
                                 <h4 class="item--title"><a
-                                        href="http://127.0.0.1:8000/team/member/veronica-johnson-1721585824">VVeronica Johnson1</a></h4>
+                                        href="http://127.0.0.1:8000/team/member/veronica-johnson-1721585824">Veronica Johnson1</a></h4>
                                 <div class="item--position">Web Developer</div>
                                 <div class="item--social">
                                     <a href="www.facebook.com" target="_blank"><i class='fab fa-facebook-f'></i></a>
@@ -33,8 +33,7 @@
                                     <a href="www.twitter.com" target="_blank"><i class='fab fa-twitter'></i></a>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary"
-                                        style="background-color: #fff; color: black;">Read more +</button>
+                                    <a href="http://127.0.0.1:8000/team/member/veronica-johnson-1721585824" class="btn btn-primary" style="background-color: #fff;font-weight: 600;color: #666;"> Read more +</a>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +57,7 @@
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
                                 <h4 class="item--title"><a
-                                        href="http://127.0.0.1:8000/team/member/chanda-lewis-1721588264">VChanda Lewis</a></h4>
+                                        href="http://127.0.0.1:8000/team/member/chanda-lewis-1721588264">Chanda Lewis</a></h4>
                                 <div class="item--position">Web Developer</div>
                                 <div class="item--social">
                                     <a href="www.facebook.com" target="_blank"><i class='fab fa-facebook-f'></i></a>
@@ -66,8 +65,7 @@
                                     <a href="www.twitter.com" target="_blank"><i class='fab fa-instagram'></i></a>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary"
-                                        style="background-color: #fff; color: black;">Details +</button>
+                                    <a href="http://127.0.0.1:8000/team/member/chanda-lewis-1721588264" class="btn btn-primary" style="background-color: #fff;font-weight: 600;color: #666;"> Details +</a>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +89,7 @@
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
                                 <h4 class="item--title"><a
-                                        href="http://127.0.0.1:8000/team/member/arnold-burner-1721588417">VArnold Burner</a></h4>
+                                        href="http://127.0.0.1:8000/team/member/arnold-burner-1721588417">Arnold Burner</a></h4>
                                 <div class="item--position">Web Developer</div>
                                 <div class="item--social">
                                     <a href="www.facebook.com" target="_blank"><i class='fab fa-facebook-f'></i></a>
@@ -99,8 +97,7 @@
                                     <a href="www.twitter.com" target="_blank"><i class='fab fa-twitter'></i></a>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary"
-                                        style="background-color: #fff; color: black;">Details +</button>
+                                    <a href="http://127.0.0.1:8000/team/member/arnold-burner-1721588417" class="btn btn-primary" style="background-color: #fff;font-weight: 600;color: #666;"> Details +</a>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +121,7 @@
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
                                 <h4 class="item--title"><a
-                                        href="http://127.0.0.1:8000/team/member/jeffrey-k-may-1721588537">VJeffrey K. May</a></h4>
+                                        href="http://127.0.0.1:8000/team/member/jeffrey-k-may-1721588537">Jeffrey K. May</a></h4>
                                 <div class="item--position">Web Developer</div>
                                 <div class="item--social">
                                     <a href="www.facebook.com" target="_blank"><i class='fab fa-facebook-f'></i></a>
@@ -132,8 +129,7 @@
                                     <a href="www.twitter.com" target="_blank"><i class='fab fa-twitter'></i></a>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary"
-                                        style="background-color: #fff; color: black;">Details +</button>
+                                    <a href="http://127.0.0.1:8000/team/member/jeffrey-k-may-1721588537" class="btn btn-primary" style="background-color: #fff;font-weight: 600;color: #666;"> Details +</a>
                                 </div>
                             </div>
                         </div>

@@ -42,8 +42,12 @@ class TeamController extends Controller
             'link1'=>'required|max:255',
             'link2'=>'required|max:255',
             'link3'=>'required|max:255',
+            'details_title'=>'nullable|max:20',
+            'phone'=>'required|max:40',
+            'email'=>'required|max:200',
+            'address'=>'required|max:255',
             'short_description'=>'required|max:500',
-            'description'=>'required|max:3500',
+            'description'=>'nullable|max:3500',
         ]);
 
         try
@@ -65,6 +69,10 @@ class TeamController extends Controller
                     'link1'                 =>  $request->link1,
                     'link2'                 =>  $request->link2,
                     'link3'                 =>  $request->link3,
+                    'phone'                 =>  $request->phone,
+                    'email'                 =>  $request->email,
+                    'details_title'         =>  $request->details_title,
+                    'address'               =>  $request->address,
                     'short_description'     =>  $request->short_description,
                     'description'           =>  $request->description,
                     'section_id'            =>  8,
@@ -157,8 +165,12 @@ class TeamController extends Controller
             'link1'=>'required|max:255',
             'link2'=>'required|max:255',
             'link3'=>'required|max:255',
+            'details_title'=>'nullable|max:20',
+            'phone'=>'required|max:40',
+            'email'=>'required|max:200',
+            'address'=>'required|max:255',
             'short_description'=>'required|max:500',
-            'description'=>'required|max:3500',
+            'description'=>'nullable|max:3500',
         ]);
         try
         {
@@ -191,6 +203,10 @@ class TeamController extends Controller
                 $service->link1 = $request->link1;
                 $service->link2 = $request->link2;
                 $service->link3 = $request->link3;
+                $service->phone = $request->phone;
+                $service->email = $request->email;
+                $service->details_title = $request->details_title;
+                $service->address = $request->address;
                 $service->short_description = $request->short_description;
                 $service->description = $request->description;
                 // $service->slug = Str::slug($request->name)."-".strtotime(Carbon::now()) ;

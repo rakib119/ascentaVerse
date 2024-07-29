@@ -258,6 +258,42 @@
                                                     @enderror
                                                 </div>
                                             </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="details_title">Details Title <span class="text-danger">*</span></label>
+                                                    <input id="details_title" type="text" class="form-control" value="{{ old('details_title') }}" name="details_title" placeholder="Ex: Information" >
+                                                    @error('details_title')
+                                                        <h6 class="text-danger"> {{ $message }}</h6>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="phone">Phone <span class="text-danger">*</span></label>
+                                                    <input id="phone" type="text" class="form-control" value="{{ old('phone') }}" name="phone" placeholder="+880 1233333333 <br>+880 124444444 " >
+                                                    @error('phone')
+                                                        <h6 class="text-danger"> {{ $message }}</h6>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
+                                                    <input id="email" type="text" class="form-control" value="{{ old('email') }}" name="email" placeholder="email1@gmail.com" >
+                                                    @error('email')
+                                                        <h6 class="text-danger"> {{ $message }}</h6>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="address">Address <span class="text-danger">*</span></label>
+                                                    <input id="address" type="text" class="form-control" value="{{ old('address') }}" name="address" placeholder="Ave 14th Street, us-1212,<br>San Franciso, USA 4200." >
+                                                    @error('address')
+                                                        <h6 class="text-danger"> {{ $message }}</h6>
+                                                    @enderror
+                                                </div>
+                                            </div>
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="is_displayed_in_home">Is displayed in home page?</label>

@@ -24,6 +24,10 @@ return new class extends Migration
             $table->string('link1')->nullable();
             $table->string('link2')->nullable();
             $table->string('link3')->nullable();
+            $table->string('details_title')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('address')->nullable();
             $table->string('button_name')->nullable();
             $table->text('short_description')->max(600)->nullable();
             $table->text('description')->nullable();

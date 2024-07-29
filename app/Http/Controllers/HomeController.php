@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\BlogCategories;
 use App\Models\GenarelInfo;
+use App\Models\SocialIcon;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,11 +21,7 @@ class HomeController extends Controller
         // $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+
     public function index()
     {
         return view('fontend.mainPages.index');
@@ -77,5 +75,17 @@ class HomeController extends Controller
         // return $blogs;
         $data = GenarelInfo::select('value')->where('field_name','blog-background')->first();
         return view('fontend.detailsPages.blog_details',compact('data','categories','blogs'));
+    }
+    public function team_member_dtls($slug)
+    {
+        $data = Team::where('slug',$slug)->first();
+        $icons = SocialIcon::all();
+        $iconArray = array();
+        foreach ($icons as  $v)
+        {
+            $iconArray [$v->id] =  $v->icon;
+        }
+        $img = GenarelInfo::select('value')->where('field_name','blog-background')->first();
+        return view('fontend.detailsPages.team_details',compact('data','img','iconArray'));
     }
 }
