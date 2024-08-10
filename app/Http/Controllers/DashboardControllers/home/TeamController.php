@@ -33,7 +33,7 @@ class TeamController extends Controller
 
         $request->validate([
             'name'=>'required|max:50',
-            'photo'=>'required|image|mimes:jpg,jpeg',//|dimensions:width=270,height=303
+            'photo'=>'required|image|mimes:jpg,jpeg|dimensions:width=270,height=374',
             'designation'=>'required|max:35',
             'button_name'=>'required|max:25',
             'icon1'=>'required',
@@ -52,15 +52,19 @@ class TeamController extends Controller
 
         try
         {
-            $msg_str = uploadImage('public/assets/images/teams/',$request,'photo'); //Custom Helpers
-            $msgArr = explode('*',$msg_str);
-            if($msgArr[0] == 1){
+            $msg_str    = uploadImage('public/assets/images/teams/',$request,'photo'); //Custom Helpers
+            $thumb_str  = uploadImage('public/assets/images/teams/',$request,'thumbnail',1); //Custom Helpers
+            $msgArr     = explode('*',$msg_str);
+            $thumbArr   = explode('*',$thumb_str);
+
+            if($msgArr[0] == 1 && $thumbArr[0] == 1){
                 $is_displayed = '0' ;
                 if(isset($request->is_displayed_in_home))  $is_displayed='1';
                 Team::insert([
-                    'name'=>  $request->name,
-                    'slug'=>  Str::slug($request->name)."-".strtotime(Carbon::now()),
-                    'photo'=>  $msgArr[1],
+                    'name'                  =>  $request->name,
+                    'slug'                  =>  Str::slug($request->name)."-".strtotime(Carbon::now()),
+                    'photo'                 =>  $msgArr[1],
+                    'thumbnail'             =>  $thumbArr[1],
                     'designation'           =>  $request->designation,
                     'button_name'           =>  $request->button_name,
                     'icon1'                 =>  $request->icon1,
@@ -175,40 +179,46 @@ class TeamController extends Controller
         try
         {
             $service = Team::findOrFail($id);
-            $msg_str = uploadImage('public/assets/images/teams/',$request,'photo'); //Custom Helpers
-            $msgArr = explode('*',$msg_str);
-            if($msgArr[0] == 1){
 
+            $msg_str    = uploadImage('public/assets/images/teams/',$request,'photo'); //Custom Helpers
+            $thumb_str  = uploadImage('public/assets/images/teams/',$request,'thumbnail',1); //Custom Helpers
+            $msgArr     = explode('*',$msg_str);
+            $thumbArr   = explode('*',$thumb_str);
 
+            if($msgArr[0] == 1 && $thumbArr[0] == 1){ 
                 if ($msgArr[1]!= 0) //IF uploaded image found
                 {
                     $image_name = $msgArr[1];
-                    $path = base_path('public/assets/images/teams/' . $service->photo);
-                    $msg = insertDeleteLink($path,8); // Custom Function
-                    if ($msg!=1)
-                    {
-                        return back()->with('error',$msg);
-                    }
-                    $service->photo = $image_name;
+                    $thumbnail  = $thumbArr[1];
+                    $path       = base_path('public/assets/images/teams/' . $service->photo);
+                    $thumb_path = base_path('public/assets/images/teams/' . $service->thumbnail);
+                    $msg        = insertDeleteLink($thumb_path,8); // Custom Function
+                    $msg2       = insertDeleteLink($path,8); // Custom Function
+
+                    if ($msg!=1)    {return back()->with('error',$msg);}
+                    if ($msg2!=1)   {return back()->with('error',$msg2);}
+                    $service->photo     = $image_name;
+                    $service->thumbnail = $thumbnail;
                 }
                 $is_displayed = '0';
                 if(isset($request->is_displayed_in_home))  $is_displayed='1';
 
-                $service->name = $request->name;
-                $service->designation = $request->designation;
-                $service->button_name = $request->button_name;
-                $service->icon1 = $request->icon1;
-                $service->icon2 = $request->icon2;
-                $service->icon3 = $request->icon3;
-                $service->link1 = $request->link1;
-                $service->link2 = $request->link2;
-                $service->link3 = $request->link3;
-                $service->phone = $request->phone;
-                $service->email = $request->email;
-                $service->details_title = $request->details_title;
-                $service->address = $request->address;
-                $service->short_description = $request->short_description;
-                $service->description = $request->description;
+                $service->name                  = $request->name;
+                $service->designation           = $request->designation;
+                $service->button_name           = $request->button_name;
+                $service->icon1                 = $request->icon1;
+                $service->icon2                 = $request->icon2;
+                $service->icon3                 = $request->icon3;
+                $service->link1                 = $request->link1;
+                $service->link2                 = $request->link2;
+                $service->link3                 = $request->link3;
+                $service->phone                 = $request->phone;
+                $service->email                 = $request->email;
+                $service->details_title         = $request->details_title;
+                $service->address               = $request->address;
+                $service->short_description     = $request->short_description;
+                $service->description           = $request->description;
+                $service->is_displayed_in_home  = $is_displayed;
                 // $service->slug = Str::slug($request->name)."-".strtotime(Carbon::now()) ;
                 $service->updated_by = auth()->id();
                 $service->save();

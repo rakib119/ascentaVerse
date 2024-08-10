@@ -1,5 +1,7 @@
 
 @extends('dashboard.layout.dashboard')
+@section('css')
+@endsection
 @section('content')
 <div class="main-content">
     <div class="page-content">
@@ -141,8 +143,10 @@
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="photo"> Photo <span class="text-danger">*(w=270px, h:303px)</span> </label>
-                                                    <input id="photo" type="file"  class="form-control" name="photo" onchange="loadFile(event,'imgOutput')">
+                                                    <label class="form-label" for="photo"> Photo <span class="text-danger">*(w=270px, h:374px)</span> </label>
+                                                    {{-- <input id="photo" type="file"  class="form-control" name="photo" onchange="loadFile(event,'imgOutput')"> --}}
+                                                    <input id="photo" type="file"  class="form-control" name="photo" onchange="cropImage(this,'thumbnail',260,260,'imgOutput',270,374)">
+                                                    <input type="hidden" id="thumbnail" name="thumbnail">
                                                     @error('photo')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror
@@ -334,7 +338,7 @@
                                         <h2 class=" mb-4">Team List</h2>
                                     </div>
                                     <div>
-                                        <h4 class=" text-danger mb-4">NB: Only Four data displayed in home page.</h4>
+                                        {{-- <h4 class=" text-danger mb-4">NB: Only Four data displayed in home page.</h4> --}}
                                     </div>
                                 </div>
                                 <table id="myTable" class="table table-centered table-nowrap mb-0">
@@ -358,7 +362,7 @@
                                             <td>{{ $v->button_name }}</td>
                                             <td> <span class="badge bg-{{ $v->is_displayed_in_home==1 ? 'primary' : 'warning' }}">{{ $v->is_displayed_in_home==1 ? 'Home' : 'Service' }}</span> </td>
                                             <td>
-                                                <img width="50" src="{{asset('assets/images/teams/'.$v->photo)}}" alt="{{$v->photo}}"> </td>
+                                                <img width="50" src="{{asset('assets/images/teams/'.$v->thumbnail)}}" alt="{{$v->thumbnail}}"> </td>
                                             <td >
                                                 <!-- Example single danger button -->
                                                 <div class="btn-group">
@@ -395,4 +399,5 @@
     </div>
 </div>
 @endsection
+
 

@@ -4,14 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ "AscentaVerse -Dashboard" }}</title>
-    <link rel="icon" href="{{ asset('assets') }}/images/favicon.png" sizes="32x32" type="image/png">
+    @include('fontend.setup.headLink')
     <link href="{{ asset('dashboard/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}"
         rel="stylesheet" type="text/css" />
     <link href="{{ asset('dashboard/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <link href="{{ asset('dashboard/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/flaticon.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('dashboard/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('dashboard/assets/css/cropper-1.5.6.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/assets/css/custom.css') }}" rel="stylesheet" >
     {{-- CSS Yield --}}
     @yield('css')
 </head>
@@ -127,8 +128,10 @@ $home_link =  route('dashboard');
     </script>
     <script src="{{ asset('dashboard/assets/js/pages/dashboard.init.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/app.js') }}"></script>
-    <script src="{{ asset('dashboard/assets/js/custom.js') }}"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('dashboard/assets/js/cropper-1.5.6.js') }}"></script>
+    <script src="{{ asset('dashboard/assets/js/sweetalert2@11.js') }}"></script>
+
+    <script src="{{ asset('dashboard/assets/js/function.js') }}"></script> {{-- Always on Bottom --}}
     {{-- delete confirmation --}}
     <script>
         function deleteData(id){

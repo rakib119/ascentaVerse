@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('slug')->unique()->index('team_slug');
             $table->string('designation')->nullable();
             $table->string('photo')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->string('dtls_img')->nullable();
             $table->integer('icon1')->nullable();
             $table->integer('icon2')->nullable();
             $table->integer('icon3')->nullable();

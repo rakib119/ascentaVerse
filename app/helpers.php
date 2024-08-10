@@ -8,22 +8,52 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Support\Str;
 
 if (!function_exists('uploadImage')) {
-    function uploadImage($basepath,$request,$field_name)
+    function uploadImage($basepath,$request,$field_name,$isBase64=0)
     {
         try {
-            if ($request->hasFile($field_name))
+            if ($isBase64==1)
             {
-                $manager = new ImageManager(new Driver());
-                $image_file = $request->file($field_name);
-                $image_name = Str::random(15).'.'.$image_file->getClientOriginalExtension();
-                $image = $manager->read($image_file);
-                $path = base_path($basepath . $image_name);
-                $image->save($path);
-                return "1*".$image_name;
+                //Image From Base64
+                $imageData = $request->input('thumbnail');
+
+                // Extract the image extension and data
+                if (preg_match('/^data:image\/(\w+);base64,/', $imageData, $matches)) {
+                    $extension = $matches[1];
+                    $imageData = substr($imageData, strpos($imageData, ',') + 1);
+                    $imageData = base64_decode($imageData);
+
+                    // Generate a unique filename
+                    $image_name = Str::random(25) . '.' . $extension;
+
+                    // Save image to public folder
+                    $path = base_path($basepath . $image_name);
+                    file_put_contents($path, $imageData);
+                    // return $image_name;
+                    return "1*".$image_name;
+                }
+                else{
+                    return "1*0";
+                }
             }
-            else{
-                return "1*0";
+            else
+            {
+                //Image From File
+                if ($request->hasFile($field_name))
+                {
+                    $manager    = new ImageManager(new Driver());
+                    $image_file = $request->file($field_name);
+                    $image_name = Str::random(25).'.'.$image_file->getClientOriginalExtension();
+                    $image      = $manager->read($image_file);
+                    $path       = base_path($basepath . $image_name);
+                    $image->save($path);
+                    return "1*".$image_name;
+                }
+                else{
+                    return "1*0";
+                }
             }
+
+
         } catch (Exception $e)
         {
             return $e->getMessage();

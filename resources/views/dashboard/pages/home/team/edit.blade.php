@@ -49,8 +49,9 @@
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="mb-3">
-                                                    <label class="form-label" for="photo"> Photo <span class="text-danger">*(w=270px, h:303px)</span> </label>
-                                                    <input id="photo" type="file"  class="form-control" name="photo" onchange="loadFile(event,'imgOutput')">
+                                                    <label class="form-label" for="photo"> Photo <span class="text-danger">*(w=270px, h:374px)</span> </label>
+                                                    <input id="photo" type="file"  class="form-control" name="photo" onchange="cropImage(this,'thumbnail',260,260,'imgOutput',270,374)">
+                                                    <input type="hidden" id="thumbnail" name="thumbnail">
                                                     @error('photo')
                                                         <h6 class="text-danger"> {{ $message }}</h6>
                                                     @enderror

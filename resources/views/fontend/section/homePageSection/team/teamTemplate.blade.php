@@ -17,7 +17,7 @@
                 <div class="member px-3">
                     <div class="card">
                         <div class="initial-view">
-                            <img src="{{asset('assets/images/teams/'.$v->photo)}}"
+                            <img src="{{asset('assets/images/teams/'.$v->thumbnail)}}"
                                 class="card-img-top" alt="{{ $v->name }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $v->name }}</h5>

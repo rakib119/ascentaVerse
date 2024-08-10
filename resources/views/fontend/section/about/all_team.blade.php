@@ -10,7 +10,7 @@
                             <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
-                            <img src="http://127.0.0.1:8000/assets/images/teams/9g8ul538rny8keQ.jpg"
+                            <img src="http://127.0.0.1:8000/assets/images/teams/kTo7ZjYfoVbFSEM.jpg"
                                 class="card-img-top" alt="Veronica Johnson1">
                             <div class="card-body">
                                 <h5 class="card-title">Veronica Johnson1</h5>
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div class="detailed-view"
-                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/9g8ul538rny8keQ.jpg); background-size: cover;">
+                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/kTo7ZjYfoVbFSEM.jpg); background-size: cover;">
                             <div class="overlay"></div>
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
@@ -43,7 +43,7 @@
                             <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
-                            <img src="http://127.0.0.1:8000/assets/images/teams/UW1C4tlDPXnM9Ju.jpg"
+                            <img src="http://127.0.0.1:8000/assets/images/teams/lzJd5Bk6HDICuOX.jpg"
                                 class="card-img-top" alt="Chanda Lewis">
                             <div class="card-body">
                                 <h5 class="card-title">Chanda Lewis</h5>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="detailed-view"
-                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/UW1C4tlDPXnM9Ju.jpg); background-size: cover;">
+                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/lzJd5Bk6HDICuOX.jpg); background-size: cover;">
                             <div class="overlay"></div>
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
@@ -76,7 +76,7 @@
                             <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
-                            <img src="http://127.0.0.1:8000/assets/images/teams/VunNZmtYoZ6acUR.jpg"
+                            <img src="http://127.0.0.1:8000/assets/images/teams/7E67pKpGcIMVHoN.jpg"
                                 class="card-img-top" alt="Arnold Burner">
                             <div class="card-body">
                                 <h5 class="card-title">Arnold Burner</h5>
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="detailed-view"
-                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/VunNZmtYoZ6acUR.jpg); background-size: cover;">
+                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/7E67pKpGcIMVHoN.jpg); background-size: cover;">
                             <div class="overlay"></div>
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
@@ -109,7 +109,7 @@
                             <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
-                            <img src="http://127.0.0.1:8000/assets/images/teams/j8u9lJUbNv2jcu7.jpg"
+                            <img src="http://127.0.0.1:8000/assets/images/teams/A5Yw4h3Yjo1ykH4.jpg"
                                 class="card-img-top" alt="Jeffrey K. May">
                             <div class="card-body">
                                 <h5 class="card-title">Jeffrey K. May</h5>
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                         <div class="detailed-view"
-                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/j8u9lJUbNv2jcu7.jpg); background-size: cover;">
+                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/A5Yw4h3Yjo1ykH4.jpg); background-size: cover;">
                             <div class="overlay"></div>
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
@@ -134,6 +134,72 @@
                                 <div>
                                     <button class="btn btn-primary"
                                         style="background-color: #fff; color: black;">Details +</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col mb-5">
+                    <div class="card">
+                        <div class="initial-view">
+                            <img src="http://127.0.0.1:8000/assets/images/teams/zRtAvemCpYFOrSi.jpg"
+                                class="card-img-top" alt="Mr. Jon Herry">
+                            <div class="card-body">
+                                <h5 class="card-title">Mr. Jon Herry</h5>
+                                <p class="card-text">CEO, Sohoz.com</p>
+                                <a class="item--details"
+                                    href="http://127.0.0.1:8000/team/member/mr-jon-herry-1723309877">+</a>
+                            </div>
+                        </div>
+                        <div class="detailed-view"
+                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/zRtAvemCpYFOrSi.jpg); background-size: cover;">
+                            <div class="overlay"></div>
+                            <div class="item--holder-inner">
+                                <div class="item--desc"> n publishing and graphic design, Lorem i...</div>
+                                <h4 class="item--title"><a
+                                        href="http://127.0.0.1:8000/team/member/mr-jon-herry-1723309877">VMr. Jon Herry</a></h4>
+                                <div class="item--position">CEO, Sohoz.com</div>
+                                <div class="item--social">
+                                    <a href="www.facebook.com" target="_blank"><i class='fab fa-facebook-f'></i></a>
+                                    <a href="www.instagram.com" target="_blank"><i class='fab fa-instagram'></i></a>
+                                    <a href="www.twitter.com" target="_blank"><i class='fab fa-twitter'></i></a>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary"
+                                        style="background-color: #fff; color: black;">Read more +</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col mb-5">
+                    <div class="card">
+                        <div class="initial-view">
+                            <img src="http://127.0.0.1:8000/assets/images/teams/n4igqlbeZzAKbLV.jpg"
+                                class="card-img-top" alt="Chanda Lewis34">
+                            <div class="card-body">
+                                <h5 class="card-title">Chanda Lewis34</h5>
+                                <p class="card-text">MD of XYZ Group</p>
+                                <a class="item--details"
+                                    href="http://127.0.0.1:8000/team/member/chanda-lewis34-1723311797">+</a>
+                            </div>
+                        </div>
+                        <div class="detailed-view"
+                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/n4igqlbeZzAKbLV.jpg); background-size: cover;">
+                            <div class="overlay"></div>
+                            <div class="item--holder-inner">
+                                <div class="item--desc"> n publishing and graphic design, Lorem i...</div>
+                                <h4 class="item--title"><a
+                                        href="http://127.0.0.1:8000/team/member/chanda-lewis34-1723311797">VChanda Lewis34</a></h4>
+                                <div class="item--position">MD of XYZ Group</div>
+                                <div class="item--social">
+                                    <a href="www.facebook.com" target="_blank"><i class='fab fa-facebook-f'></i></a>
+                                    <a href="www.instagram.com" target="_blank"><i class='fab fa-instagram'></i></a>
+                                    <a href="www.twitter.com" target="_blank"><i class='fab fa-twitter'></i></a>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary"
+                                        style="background-color: #fff; color: black;">Read more +</button>
                                 </div>
                             </div>
                         </div>
