@@ -65,7 +65,7 @@ $home_link =  route('dashboard');
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="rounded-circle header-profile-user"
                                 src="{{ asset('dashboard/assets/images/default-profile-picture.jpg') }}" alt="Header Avatar">
-                            <span class="d-none text-white d-xl-inline-block ms-1">{{-- Auth::user()->name --}}</span>
+                            <span class="d-none text-white d-xl-inline-block ms-1">{{ Auth::user()->name }}</span>
                             <i class="mdi mdi-chevron-down d-none text-white d-xl-inline-block"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
@@ -103,7 +103,7 @@ $home_link =  route('dashboard');
                     <div class="col-sm-6">
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> © {{ config('app.name', 'Laravel') }}
+                        </script> © {{ config('app.name', '') }}
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-end d-none d-sm-block">
@@ -128,7 +128,7 @@ $home_link =  route('dashboard');
     <script src="{{ asset('dashboard/assets/js/pages/dashboard.init.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/app.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/custom.js') }}"></script>
-    {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- delete confirmation --}}
     <script>
         function deleteData(id){

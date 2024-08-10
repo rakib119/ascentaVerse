@@ -10,7 +10,7 @@
                             <div class="col mb-5">
                     <div class="card">
                         <div class="initial-view">
-                            <img src="http://127.0.0.1:8000/assets/images/teams/3s14stYHfu3pRzr.jpg"
+                            <img src="http://127.0.0.1:8000/assets/images/teams/9g8ul538rny8keQ.jpg"
                                 class="card-img-top" alt="Veronica Johnson1">
                             <div class="card-body">
                                 <h5 class="card-title">Veronica Johnson1</h5>
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div class="detailed-view"
-                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/3s14stYHfu3pRzr.jpg); background-size: cover;">
+                            style="background-image: url(http://127.0.0.1:8000/assets/images/teams/9g8ul538rny8keQ.jpg); background-size: cover;">
                             <div class="overlay"></div>
                             <div class="item--holder-inner">
                                 <div class="item--desc"> Lead the team of passionate developers, ...</div>
