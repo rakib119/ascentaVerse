@@ -32,7 +32,7 @@ class hs4Controller extends Controller
 
         $request->validate([
             'title'=>'required|max:50|unique:services,title',
-            'thumbnail'=>'required|image|mimes:jpg,jpeg|dimensions:width=270,height=303',
+            'thumbnail'=>'required|image|mimes:jpg,jpeg',
             'button_name'=>'required|max:25',
             'icon'=>'required|max:150',
             'short_description'=>'required|max:350',
@@ -40,7 +40,7 @@ class hs4Controller extends Controller
 
         try
         {
-            $msg_str = uploadImage('public/assets/images/services/',$request,'thumbnail'); //Custom Helpers
+            $msg_str = uploadImage('public/assets/images/services/',$request,'thumbnail_hidden',1); //Custom Helpers
             $msgArr = explode('*',$msg_str);
             if($msgArr[0] == 1){
                 $is_displayed = '0' ;
@@ -132,7 +132,7 @@ class hs4Controller extends Controller
         // return $request;
         $request->validate([
             'title'=>'required|max:50|unique:services,title,'.$id.',id',
-            'thumbnail'=>'nullable|image|mimes:jpg,jpeg|dimensions:width=270,height=303',
+            'thumbnail'=>'nullable|image|mimes:jpg,jpeg',
             'button_name'=>'required|max:25',
             'icon'=>'required|max:150',
             'short_description'=>'required|max:350',
@@ -140,7 +140,7 @@ class hs4Controller extends Controller
         try
         {
             $service = Service::findOrFail($id);
-            $msg_str = uploadImage('public/assets/images/services/',$request,'thumbnail'); //Custom Helpers
+            $msg_str = uploadImage('public/assets/images/services/',$request,'thumbnail_hidden',1); //Custom Helpers
             $msgArr = explode('*',$msg_str);
             if($msgArr[0] == 1){
 

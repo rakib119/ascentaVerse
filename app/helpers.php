@@ -14,7 +14,7 @@ if (!function_exists('uploadImage')) {
             if ($isBase64==1)
             {
                 //Image From Base64
-                $imageData = $request->input('thumbnail');
+                $imageData = $request->input($field_name);
 
                 // Extract the image extension and data
                 if (preg_match('/^data:image\/(\w+);base64,/', $imageData, $matches)) {

@@ -17,7 +17,7 @@
                             <div class="col-12 col-sm-6 col-md-3 mb-5">
                     <div class="card card-custom h-100">
                         <picture>
-                            <img src="http://127.0.0.1:8000/assets/images/services/ZWK3L3BPMYaOkoJ.jpg" class="card-img-top mx-auto" alt="Backup &amp; Recovery">
+                            <img src="http://127.0.0.1:8000/assets/images/services/wwMWKkzXTQK9Z2tsUZWXfLh2G.png" class="card-img-top mx-auto" alt="Backup &amp; Recovery">
                         </picture>
                         <div class="card-body">
                                                             <div class="card-icon">
@@ -61,7 +61,7 @@
                             <div class="col-12 col-sm-6 col-md-3 mb-5">
                     <div class="card card-custom h-100">
                         <picture>
-                            <img src="http://127.0.0.1:8000/assets/images/services/qZL0qGtI4FFMHXD.jpg" class="card-img-top mx-auto" alt="Consulting Planning">
+                            <img src="http://127.0.0.1:8000/assets/images/services/uTMCjbAHP5rkT6kBB8prtIsVT.png" class="card-img-top mx-auto" alt="Consulting Planning">
                         </picture>
                         <div class="card-body">
                                                             <div class="card-icon">
