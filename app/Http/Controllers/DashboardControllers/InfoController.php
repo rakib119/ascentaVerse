@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\GenarelInfo;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 
 class InfoController extends Controller
@@ -121,5 +122,30 @@ class InfoController extends Controller
                 $message = $e->getMessage();
                 return back()->with('error',$message);
         }
+    }
+    public function uploadCkFile(Request $request)
+    {
+        /* if ($request->hasFile('upload'))
+        {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+            $request->file('upload')->move(public_path('media'), $fileName);
+            $url = asset('media/' . $fileName);
+            return response()->json(['fileName' => $fileName, 'uploaded'=> 1, 'url' => $url]);
+
+        } */
+               // Validate the uploaded file
+               $request->validate([
+                'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            // Handle the file upload
+            $file = $request->file('file');
+            $path = $file->store('public/images');
+
+            // Return the URL to the image
+            return response()->json(['location' => Storage::url($path)]);
     }
 }

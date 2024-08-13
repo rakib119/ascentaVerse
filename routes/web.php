@@ -31,6 +31,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/blog/details/{slug}', 'blogs_details')->name('blog-details');
     Route::get('/blogs/category/{slug}', 'category_wise_blogs')->name('blog.category');
     Route::get('/kyc', 'kyc')->name('kyc');
+
 });
 
 
@@ -94,5 +95,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('info-setup', InfoController::class)->only('index','edit','update');
     Route::put('info-setup/photo/update/{id}',[InfoController::class, 'image_update'])->name('info-setup.photo-update');
     Route::post('info-setup/published',[InfoController::class, 'published'])->name('info-setup.publish');
+    Route::post('ckeditor/upload', [InfoController::class, 'uploadCkFile'])->name('ckeditor.upload');
 
 });
